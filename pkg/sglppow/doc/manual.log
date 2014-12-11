@@ -1,0 +1,93 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdftex 2012.12.12)  10 DEC 2014 09:36
+entering extended mode
+ %&-line parsing enabled.
+**manual
+(./manual.tex (./gapmacro.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running PDFTeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read1
+\indexin=\read2
+\tocin=\read3
+\citein=\read4
+\secno=\count27
+\subsecno=\count28
+\exno=\count29
+\indentno=\count30
+\chapnum=\count31
+\ortoks=\toks13
+) (../VERSION) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\makelabel{SglPPow:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+
+Chapter `Contents' .
+(./manual.toc) [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] (./manual.lab)
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+ (./intro.tex
+Chapter `Introduction' .
+) (./access.tex [3.1]
+Chapter `Accessing the data' .
+) (./data.tex [4.2]
+Chapter `The organsation of the data' .
+[5.3] [6.3]) [7.3]
+Chapter `Bibliography' .
+(./manual.bbl) [8.4]
+Chapter `Index' .
+No file manual.ind.
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## Labels have changed, run again. (Or they were multiply defined.)
+##
+[9.5] )pdfTeX warning (dest): name{Index} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cminch.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssdc10.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/sym
+bols/msam7.pfb>
+Output written on manual.pdf (9 pages, 173796 bytes).
+PDF statistics:
+ 125 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+
