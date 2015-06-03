@@ -1,11 +1,11 @@
-#############################################################################
+###########################################################################
 ##  
 
 SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "0.9",
+Version := "1.0",
 Date := "21/11/2014",
 
 PackageWWWHome
@@ -55,7 +55,7 @@ AvailabilityTest := ReturnTrue,
 Dependencies := rec(
   GAP := "4.5.3",
   NeededOtherPackages := [],
-  SuggestedOtherPackages := [["LiePRing", ">=1.8"]],
+  SuggestedOtherPackages := [["LiePRing", ">=1.8"],["LieRing", ">=2.2"]],
   ExternalConditions := []
 ),
 
