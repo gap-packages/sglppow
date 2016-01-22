@@ -33,7 +33,8 @@ SMALL_AVAILABLE_FUNCS[layer_phoch7] := function( size )
             p := p,
             n := n,
             number := 3 * p ^ 5 + 12 * p ^ 4 + 44 * p ^ 3 + 170 * p ^ 2 
-                    + 707 * p + 2 
+                   # + 707 * p + 2 
+                    + 707 * p + 2455 
                     + (4 * p ^ 2 + 44 * p + 291) * Gcd((p-1), 3 ) 
                     + (p ^ 2 + 19 * p + 135) * Gcd((p-1), 4 ) 
                     + (3 * p + 31) * Gcd((p-1), 5 ) 
