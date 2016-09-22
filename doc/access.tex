@@ -3,10 +3,10 @@
 \Chapter{Accessing the data}
 
 When this package is loaded, then the groups of order $3^8$ and $p^7$ for 
-$p > 11$ are additionally available via the SmallGroups library. As a result,
-all groups of order $p^n$ with $p=2$ and $n \leq 9$ and $p=3$ and $n \leq 8$
-and $p$ arbitrary and $n \leq 7$ are then available via the small groups
-library. The corresponding information can be obtained via 
+primes $p > 11$ are additionally available via the SmallGroups library. As 
+a result, all groups of order $p^n$ with $p=2$ and $n \leq 9$ and $p=3$ and 
+$n \leq 8$ and $p$ an arbitrary prime and $n \leq 7$ are then available via 
+the small groups library. The corresponding information can be obtained via 
 
 \>SmallGroup(size, number)
 
@@ -14,21 +14,35 @@ library. The corresponding information can be obtained via
 
 \>SmallGroupsInformation(size)
 
-There is no IdGroup function available for this extension of the small
+See Section 50.7 in the GAP manual for background on these functions. Note
+that there is no IdGroup function available for this extension of the small
 groups library.
 
 WARNING: The user should be aware that there are there are 1,396,077 groups
 of order $3^8$, 1,600,573 groups of order $13^{7}$, and 5,546,909 groups
 of order $17^7$. For general $p$ the number of groups of order $p^7$ is 
-of order $3p^5$. Furthermore as $p$ increases, the time taken to
-generate a complete list of the groups of order $p^7$ grows rapidly.
-Experimentally the time seems to be proportional to $p^{6.2}$. 
-For $p=13$ it
-takes several hours to generate the complete list. For $p\leq 11$ the
-groups are precomputed, and their SmallGroup codes are stored in the
-SmallGroups database. For $p>11$ the Lie rings have to be generated from
-4773 parametrized presentations in the LiePRing database, and then converted
-into groups using the Baker-Campbell-Hausdorff formula. A complete list of 
-power commutator presentations for the groups of order $13^7$ takes over 
-11 gb of memory.
+a PORC polynomial in $p$ with leading term $3p^5$. Furthermore, as the prime
+$p$ increases, the time taken to generate a complete list of the groups of 
+order $p^7$ grows rapidly. Experimentally the time seems to be proportional
+to $p^{6.2}$. For $p=13$ it takes several hours to generate the complete 
+list. For primes $p\leq 11$ the groups are precomputed, and their SmallGroup 
+codes are stored in the SmallGroups database. For primes $p>11$ the Lie rings 
+have to be generated from 4773 parametrized presentations in the LiePRing 
+database, and then converted into groups using the Baker-Campbell-Hausdorff 
+formula. A complete list of power commutator presentations for the groups 
+of order $13^7$ takes over 11 gb of memory.
+
+\beginexample
+gap> NumberSmallGroups(3^8);
+1396077
+gap> SmallGroup(3^8, 1000000);
+<pc group of size 6561 with 8 generators>
+gap> NumberSmallGroups(17^7);
+5546909
+gap> SmallGroup(17^7, 5000);
+constructing a batch of 1156 groups ... this may take a while 
+<pc group of size 410338673 with 7 generators>
+gap> NumberSmallGroups(101^7);
+32826263845
+\endexample
 

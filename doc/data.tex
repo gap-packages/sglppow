@@ -1,12 +1,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Chapter{The organsation of the data}
+\Chapter{The organization of the data}
 
-We include some brief comments on the organisation of the data. As a 
+We include some brief comments on the organization of the data. As a 
 preliminary step we briefly recall the $p$-group generation algorithm.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Section{The p-group generation algorithm}
+\Section{The $p$-group generation algorithm}
 
 The $p$-group generation algorithm was developed and implemented by Eamonn
 O'Brien, and we refer the reader to \cite{OBrien90} for a detailed
@@ -41,7 +41,7 @@ generation algorithm.
 Thus the databases of nilpotent Lie rings of order 
 $p^{7}$ and of the groups of order $3^{8}$ are organized according to these 
 algorithms: the immediate descendants of order $p^{7}$ of each nilpotent 
-Lie ring of order less that $p^{7}$ are grouped together in the database of 
+Lie ring of order less than $p^{7}$ are grouped together in the database of 
 nilpotent Lie rings, and the immediate descendants of order $3^{8}$ of each 
 group of order less than $3^{8}$ are grouped together in the database of 
 groups of order $3^{8}$.
@@ -55,20 +55,6 @@ a minimal generating set, and $p$-class is as defined in the previous
 section. The following table gives the number of groups of order $3^{8}$ of
 each rank and $p$-class, with the $(i,j)$ entry corresponding to rank $i$
 and $p$-class $j$.
-
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|c|c|c|c|}
-%\hline
-%0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ \hline
-%0 & 0 & 58 & 486 & 1343 & 330 & 9 & 0 \\ \hline
-%0 & 4 & 216747 & 40521 & 2163 & 24 & 0 & 0 \\ \hline
-%0 & 23361 & 494666 & 22343 & 51 & 0 & 0 & 0 \\ \hline
-%0 & 578478 & 14796 & 80 & 0 & 0 & 0 & 0 \\ \hline
-%0 & 566 & 39 & 0 & 0 & 0 & 0 & 0 \\ \hline
-%0 & 10 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-%1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-%\end{tabular}
-%\end{center}
 
 \beginexample
   | 1   2        3        4       5      6     7   8
@@ -88,28 +74,6 @@ group, then the 2-generator groups follow in order of increasing $p$-class
 and so on. The above table can thus be used to find the range of numbers
 of groups with a given rank and $p$-class.
 
-%The following table gives the range of numbers used to access the groups of
-%order $3^{8}$ of a given rank and class.
-
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|c|c|c|c|}
-%\hline
-%&  &  &  &  &  &  & {\small 1} \\ \hline
-%&  & {\small 2--59} & {\small 60--545} & {\small 546--1888} & {\small %
-%1889--2218} & {\small 2219-2227} &  \\ \hline
-%& {\small 2228--2231} & {\small 2232--218978} & {\small 218979--259499} & 
-%{\small 259500--261662} & {\small 261663--261686} &  &  \\ \hline
-%& {\small 261687--285047} & {\small 285048--779713} & {\small 779714--802056}
-%& {\small 802057--802107} &  &  &  \\ \hline
-%& {\small 802108--1380585} & {\small 1380586--1395381} & {\small %
-%1395382--1395461} &  &  &  &  \\ \hline
-%& {\small 1395462--1396027} & {\small 1396028--1396066} &  &  &  &  &  \\ 
-%\hline
-%& {\small 1396067--1396076} &  &  &  &  &  &  \\ \hline
-%{\small 1396077} &  &  &  &  &  &  &  \\ \hline
-%\end{tabular}
-%\end{center}
-
 As mentioned above, the database is organized according to the $p$-group
 generation algorithm. For example, the 9 groups of rank 2, $p$-class 7, and
 order $3^{8}$ are numbered from 2219--2227. The groups numbered 2219 and
@@ -124,7 +88,7 @@ SmallGroup($3^{7},5849$).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Section{The groups with order the seventh power of a prime}
 
-The groups of order $p^{7}$ for $p>11$ are obtained from the LiePRing
+The groups of order $p^{7}$ for prime $p>11$ are obtained from the LiePRing
 database of nilpotent Lie rings of order $p^{7}$ using Willem de Graaf's
 implementation of the Baker-Campbell-Hausdorff formula. The LiePRing
 database is organized according to the output from the nilpotent Lie ring
@@ -147,9 +111,9 @@ descendants of
 $$
 \langle a,b\,|\,babb,pa,pb,\,class 4\rangle . 
 $$
-And so on. The nine rank 6 Lie rings in the database are the rank 6, 
-$p$-class 2 Lie rings. These are the immediate descendants of the elementary
-abelian Lie ring of rank 6.
+The nine rank 6 Lie rings in the database are the rank 6, $p$-class 2 
+Lie rings. These are the immediate descendants of the elementary abelian 
+Lie ring of rank 6.
 
 There is a complete list of presentations for the nilpotent Lie rings of
 order $p^{k}$ for $k\leq 7$ valid for all $p>3$ in the document p567.pdf
