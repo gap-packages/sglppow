@@ -1,7 +1,8 @@
 \chapcontents {1}{Introduction}{3}
 \chapcontents {2}{Accessing the data}{4}
-\chapcontents {3}{The organsation of the data}{5}
-\seccontents {3.1}{The p-group generation algorithm} {5}
+\chapcontents {3}{The organization of the data}{5}
+\seccontents {3.1}{The $p$-group generation algorithm} {5}
 \seccontents {3.2}{The groups of order 6561} {5}
 \seccontents {3.3}{The groups with order the seventh power of a prime} {6}
-\chapcontents {}{Bibliography}{8}
+\chapcontents {4}{Installing and loading the package}{8}
+\chapcontents {}{Bibliography}{9}

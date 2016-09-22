@@ -13,23 +13,23 @@ Groups Library gives access to the following groups:
     Those of squarefree order;
     Those whose order factorises into at most 3 primes.
 
-This package gives access to the groups of order p^7 for p > 11,
+This package gives access to the groups of order p^7 for primes p > 11,
 and to the groups of order 3^8.
 
 The Database of groups of order 3^8 has been determined by Michael 
-Vaughan-Lee. Access to the groups of order p^7 for p > 11 is via 
+Vaughan-Lee. Access to the groups of order p^7 for primes p > 11 is via 
 Bettina Eick and Michael Vaughan-Lee's LiePRing package which is based 
 on Eamonn O'Brien and Michael Vaughan-Lee's classification of the nilpotent 
 Lie rings of order p^7. 
 
 The package can be downloaded from
-    www.icm.tu-bs.de/~beick/soft/sglppow/sglppow.tar
+    www.icm.tu-bs.de/~beick/soft/sglppow/sglppow-Version.tar
 
 Then tar -zxvf slgppow.tar produces a directory sglppow. This should be
-moved into the pkg directory of a GAP installation and then it should work.
+moved into the pkg directory of a GAP installation.
 
 The package is set up so that after loading it into GAP with
-RequirePackage("sglppow"), the groups can be obtained via the command
+LoadPackage("sglppow"), the groups can be obtained via the command
     SmallGroup( size, nr )
 You can also obtain the number of groups of a given order with the command
     NumberSmallGroups(size)

@@ -5,8 +5,8 @@ SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "1.1",
-Date := "21/11/2014",
+Version := "2.0",
+Date := "11/08/2016",
 
 PackageWWWHome
   := "http://www.icm.tu-bs.de/~beick/soft/sglppow/",
@@ -20,7 +20,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "michael.vaughan-lee@chch.ox.ac.uk",
-    WWWHome       := "users.ox.ac.uk/~vlee",
+    WWWHome       := "http://users.ox.ac.uk/~vlee",
     place         := "Oxford"),
   rec(
     LastName      := "Eick",
@@ -28,11 +28,13 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "beick@tu-bs.de",
-    WWWHome       := "www.icm.tu-bs.de/~beick",
+    WWWHome       := "http://www.icm.tu-bs.de/~beick",
     Place         := "TU Braunschweig" ),
 ],
 
-Status := "deposited",
+Status           := "accepted",
+CommunicatedBy   := "Leonard Soicher (QMUL)",
+AcceptDate       := "08/2016",
 
 README_URL := 
   Concatenation( ~.PackageWWWHome, "README" ),
