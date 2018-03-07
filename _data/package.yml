@@ -1,48 +1,41 @@
-name: GitHubPagesForGAP
-version: 0.2
-date: 2017-02-04
+name: SglPPow
+version: 2.0
+date: 2016-08-11
 description: |
-    A GitHub Pages generator for GAP packages
+    Database of groups of prime-power order for some prime-powers
 
 authors:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: A. U. Thor
+    - name: Michael Vaughan-Lee
+      url: http://users.ox.ac.uk/~vlee
+    - name: Bettina Eick
+      url: http://www.icm.tu-bs.de/~beick
 
 maintainers:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: Jan Itor
+    - name: Michael Vaughan-Lee
+      url: http://users.ox.ac.uk/~vlee
+    - name: Bettina Eick
+      url: http://www.icm.tu-bs.de/~beick
 
-GAP: ">=4.8.1"
-
-needed-pkgs:
-    - name: "GAPDoc"
-      version: ">= 1.2"
-      url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
-    - name: "IO"
-      version: ">= 4.1"
-      url: "https://gap-packages.github.io/io"
+GAP: "4.5.3"
 
 suggested-pkgs:
-    - name: "orb"
-      version: ">= 4.2"
-      url: "https://gap-packages.github.io/orb"
+    - name: "LiePRing"
+      version: ">=1.8"
+      url: "https://gap-packages.github.io/liepring/"
+    - name: "LieRing"
+      version: ">=2.2"
+      url: "http://www.science.unitn.it/~degraaf/liering.html"
 
-www: https://gap-system.github.io/GitHubPagesForGAP/
-readme: README.md
-packageinfo: https://gap-system.github.io/GitHubPagesForGAP/PackageInfo.g
-github: https://github.com/gap-system/GitHubPagesForGAP
+www: http://www.icm.tu-bs.de/~beick/soft/sglppow/
+readme: README
+packageinfo: http://www.icm.tu-bs.de/~beick/soft/sglppow/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.gz
-    - name: .tar.bz2
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.bz2
+      url: http://www.icm.tu-bs.de/~beick/soft/sglppow/sglppow-2.0.tar.gz
 
 abstract: |
-    This is a pseudo package that contains no actual  <span class="pkgname">GAP</span> code. Instead, it is a template for other  GAP packages that allows to quickly setup GitHub Pages.
 
-status: other
-doc-html: doc/chap0.html
+status: accepted
+doc-html: htm/chapters.htm
 doc-pdf: doc/manual.pdf

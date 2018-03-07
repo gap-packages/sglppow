@@ -1,0 +1,57 @@
+<html><head><title>[sglppow] 2 Accessing the data</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<h1>2 Accessing the data</h1><p>
+<p>
+When this package is loaded, then the groups of order <var>3<sup>8</sup></var> and <var>p<sup>7</sup></var> for 
+primes <var>p &gt; 11</var> are additionally available via the SmallGroups library. As 
+a result, all groups of order <var>p<sup>n</sup></var> with <var>p=2</var> and <var>n leq9</var> and <var>p=3</var> and 
+<var>n leq8</var> and <var>p</var> an arbitrary prime and <var>n leq7</var> are then available via 
+the small groups library. The corresponding information can be obtained via 
+<p>
+<a name = ""></a>
+<li><code>SmallGroup(size, number)</code>
+<p>
+<a name = ""></a>
+<li><code>NumberSmallGroups(size)</code>
+<p>
+<a name = ""></a>
+<li><code>SmallGroupsInformation(size)</code>
+<p>
+See Section 50.7 in the GAP manual for background on these functions. Note
+that there is no IdGroup function available for this extension of the small
+groups library.
+<p>
+WARNING: The user should be aware that there are there are 1,396,077 groups
+of order <var>3<sup>8</sup></var>, 1,600,573 groups of order <var>13<sup>7</sup></var>, and 5,546,909 groups
+of order <var>17<sup>7</sup></var>. For general <var>p</var> the number of groups of order <var>p<sup>7</sup></var> is 
+a PORC polynomial in <var>p</var> with leading term <var>3p<sup>5</sup></var>. Furthermore, as the prime
+<var>p</var> increases, the time taken to generate a complete list of the groups of 
+order <var>p<sup>7</sup></var> grows rapidly. Experimentally the time seems to be proportional
+to <var>p<sup>6.2</sup></var>. For <var>p=13</var> it takes several hours to generate the complete 
+list. For primes <var>pleq11</var> the groups are precomputed, and their SmallGroup 
+codes are stored in the SmallGroups database. For primes <var>p&gt;11</var> the Lie rings 
+have to be generated from 4773 parametrized presentations in the LiePRing 
+database, and then converted into groups using the Baker-Campbell-Hausdorff 
+formula. A complete list of power commutator presentations for the groups 
+of order <var>13<sup>7</sup></var> takes over 11 gb of memory.
+<p>
+<pre>
+gap&gt; NumberSmallGroups(3^8);
+1396077
+gap&gt; SmallGroup(3^8, 1000000);
+&lt;pc group of size 6561 with 8 generators&gt;
+gap&gt; NumberSmallGroups(17^7);
+5546909
+gap&gt; SmallGroup(17^7, 5000);
+constructing a batch of 1156 groups ... this may take a while 
+&lt;pc group of size 410338673 with 7 generators&gt;
+gap&gt; NumberSmallGroups(101^7);
+32826263845
+</pre>
+<p>
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>sglppow manual<br>March 2018
+</address></body></html>

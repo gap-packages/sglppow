@@ -1,102 +1,73 @@
-#############################################################################
+###########################################################################
 ##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
-##
 
 SetPackageInfo( rec(
 
-PackageName := "GitHubPagesForGAP",
+PackageName := "SglPPow",
+Subtitle := "Database of groups of prime-power order for some prime-powers",
+Version := "2.0",
+Date := "11/08/2016",
 
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.2",
-Date := "04/02/2017", # dd/mm/yyyy format
-
+PackageWWWHome
+  := "http://www.icm.tu-bs.de/~beick/soft/sglppow/",
+ArchiveURL
+  := Concatenation( ~.PackageWWWHome, "sglppow-", ~.Version ),
+ArchiveFormats := ".tar.gz",
 Persons := [
   rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
+    LastName      := "Vaughan-Lee",
+    FirstNames    := "Michael",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "AG Algebra\n",
-                       "Mathematisches Institut\n",
-                       "Justus-Liebig-Universität Gießen\n",
-                       "Arndtstraße 2\n",
-                       "35392 Gießen\n",
-                       "Germany" ),
-    Place         := "Gießen",
-    Institution   := "Justus-Liebig-Universität Gießen"
-  ),
-
+    Email         := "michael.vaughan-lee@chch.ox.ac.uk",
+    WWWHome       := "http://users.ox.ac.uk/~vlee",
+    place         := "Oxford"),
   rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
+    LastName      := "Eick",
+    FirstNames    := "Bettina",
     IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
-
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
     IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
+    Email         := "beick@tu-bs.de",
+    WWWHome       := "http://www.icm.tu-bs.de/~beick",
+    Place         := "TU Braunschweig" ),
 ],
 
-Status := "other",
+Status           := "accepted",
+CommunicatedBy   := "Leonard Soicher (QMUL)",
+AcceptDate       := "08/2016",
 
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
+README_URL := 
+  Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL := 
+  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
+AbstractHTML := "",
 
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
+  BookName  := "SglPPow",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "htm/chapters.htm",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
-),
-
-# The following dependencies are fake and for testing / demo purposes
-Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  LongTitle := "Database of groups of prime-power order",
 ),
 
 AvailabilityTest := ReturnTrue,
 
-Keywords := ["GitHub Pages", "GAP"]
+Dependencies := rec(
+  GAP := "4.5.3",
+  NeededOtherPackages := [],
+  SuggestedOtherPackages := [["LiePRing", ">=1.8"],["LieRing", ">=2.2"]],
+  ExternalConditions := []
+),
+
+BannerString := Concatenation(
+    "----------------------------------------------------------------\n",
+    "Loading SglPPow ", ~.Version, "\n",
+    "by Michael Vaughan-Lee and Bettina Eick \n",
+    "----------------------------------------------------------------\n" ),
+
+Keywords := ["", "", ""]
 
 ));
-
 
