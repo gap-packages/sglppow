@@ -5,8 +5,8 @@ SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "2.0",
-Date := "11/08/2016",
+Version := "2.1",
+Date := "08/03/2018",
 
 Persons := [
   rec(
