@@ -22,8 +22,8 @@ Bettina Eick and Michael Vaughan-Lee's LiePRing package which is based
 on Eamonn O'Brien and Michael Vaughan-Lee's classification of the nilpotent 
 Lie rings of order p^7. 
 
-The package can be downloaded from
-    www.icm.tu-bs.de/~beick/soft/sglppow/sglppow-Version.tar
+The package can be downloaded as a .tar.gz file from
+    https://gap-packages.github.io/sglppow/
 
 Then tar -zxvf slgppow.tar produces a directory sglppow. This should be
 moved into the pkg directory of a GAP installation.
