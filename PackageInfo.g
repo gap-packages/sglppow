@@ -5,14 +5,9 @@ SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "2.0",
-Date := "11/08/2016",
+Version := "2.1",
+Date := "08/03/2018",
 
-PackageWWWHome
-  := "http://www.icm.tu-bs.de/~beick/soft/sglppow/",
-ArchiveURL
-  := Concatenation( ~.PackageWWWHome, "sglppow-", ~.Version ),
-ArchiveFormats := ".tar.gz",
 Persons := [
   rec(
     LastName      := "Vaughan-Lee",
@@ -21,7 +16,8 @@ Persons := [
     IsMaintainer  := true,
     Email         := "michael.vaughan-lee@chch.ox.ac.uk",
     WWWHome       := "http://users.ox.ac.uk/~vlee",
-    place         := "Oxford"),
+    Place         := "Oxford",
+    Institution   := "Oxford University"),
   rec(
     LastName      := "Eick",
     FirstNames    := "Bettina",
@@ -29,17 +25,26 @@ Persons := [
     IsMaintainer  := true,
     Email         := "beick@tu-bs.de",
     WWWHome       := "http://www.icm.tu-bs.de/~beick",
-    Place         := "TU Braunschweig" ),
+    Place         := "Braunschweig",
+    Institution   := "TU Braunschweig"),
 ],
 
 Status           := "accepted",
 CommunicatedBy   := "Leonard Soicher (QMUL)",
 AcceptDate       := "08/2016",
 
-README_URL := 
-  Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL := 
-  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+PackageWWWHome  := "https://gap-packages.github.io/sglppow/",
+README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+SourceRepository := rec(
+    Type := "git",
+    URL := "https://github.com/gap-packages/sglppow",
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/sglppow-", ~.Version ),
+ArchiveFormats := ".tar.gz",
 
 AbstractHTML := "",
 
@@ -55,7 +60,7 @@ PackageDoc := rec(
 AvailabilityTest := ReturnTrue,
 
 Dependencies := rec(
-  GAP := "4.5.3",
+  GAP := ">=4.7",
   NeededOtherPackages := [],
   SuggestedOtherPackages := [["LiePRing", ">=1.8"],["LieRing", ">=2.2"]],
   ExternalConditions := []
@@ -66,6 +71,8 @@ BannerString := Concatenation(
     "Loading SglPPow ", ~.Version, "\n",
     "by Michael Vaughan-Lee and Bettina Eick \n",
     "----------------------------------------------------------------\n" ),
+
+TestFile := "tst/testall.g",
 
 Keywords := ["", "", ""]
 
