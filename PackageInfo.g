@@ -60,7 +60,7 @@ PackageDoc := rec(
 AvailabilityTest := ReturnTrue,
 
 Dependencies := rec(
-  GAP := "4.5.3",
+  GAP := ">=4.7",
   NeededOtherPackages := [],
   SuggestedOtherPackages := [["LiePRing", ">=1.8"],["LieRing", ">=2.2"]],
   ExternalConditions := []
