@@ -5,8 +5,8 @@ SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "2.1",
-Date := "08/03/2018",
+Version := "2.2",
+Date := "11/10/2019",
 
 Persons := [
   rec(
@@ -24,7 +24,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "beick@tu-bs.de",
-    WWWHome       := "http://www.icm.tu-bs.de/~beick",
+    WWWHome       := "http://www.iaa.tu-bs.de/beick",
     Place         := "Braunschweig",
     Institution   := "TU Braunschweig"),
 ],
