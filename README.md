@@ -1,5 +1,4 @@
-
-                   README file for SglPPow
+# The GAP package SglPPow
 
 SglPPow is an extension to the GAP Small Groups Library. Currently the Small
 Groups Library gives access to the following groups:
