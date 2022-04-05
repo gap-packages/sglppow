@@ -1,222 +1,70 @@
-# GitHubPagesForGAP
+# The GAP package SglPPow
 
-This repository can be used to quickly set up a website hosted by
-[GitHub](https://github.com/) for GAP packages using a GitHub repository.
-Specifically, this uses [GitHub pages](https://pages.github.com/)
-by adding a `gh-pages` branch to your package repository which
-contains data generated from the `PackageInfo.g` file of your package.
+SglPPow is an extension to the GAP Small Groups Library. Currently the Small
+Groups Library gives access to the following groups:
 
-## Initial setup
+  - Those of order at most 2000 except 1024 (423,164,062 groups);
+  - Those of cubefree order at most 50,000 (395,703 groups);
+  - Those of order p^7 for the primes p = 3,5,7,11 (907,489 groups);
+  - Those of order p^n for n <= 6 and all primes p;
+  - Those of order q^n * p where q^n divides 28, 36, 55 or 74 and p is
+      an arbitrary prime not equal to q;
+  - Those of squarefree order;
+  - Those whose order factorises into at most 3 primes.
 
-The following instructions assume you do not already have a `gh-pages`
-branch in your repository. If you do have one, you should delete it before
-following these instructions.
+This package gives access to the groups of order p^7 for primes p > 11,
+and to the groups of order 3^8.
 
-1. Go into your clone of your package repository.
+The Database of groups of order 3^8 has been determined by Michael 
+Vaughan-Lee. Access to the groups of order p^7 for primes p > 11 is via 
+Bettina Eick and Michael Vaughan-Lee's LiePRing package which is based 
+on Eamonn O'Brien and Michael Vaughan-Lee's classification of the nilpotent 
+Lie rings of order p^7. 
 
-2. Setup a `gh-pages` branch in a `gh-pages` subdirectory.
+The package can be downloaded as a .tar.gz file from
+   <https://gap-packages.github.io/sglppow/>
 
-   Users with a recent enough git version (recommended is >= 2.11)
-   can do this using a "worktree", via the following commands:
+Then `tar -zxvf slgppow.tar` produces a directory sglppow. This should be
+moved into the `pkg` directory of a GAP installation.
 
-   ```sh
-   # Add a new remote pointing to the GitHubPagesForGAP repository
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   git fetch gh-gap
+The package is set up so that after loading it into GAP with
 
-   # Create a fresh gh-pages branch from the new remote
-   git branch gh-pages gh-gap/gh-pages --no-track
+    LoadPackage("sglppow")
 
-   # Create a new worktree and change into it
-   git worktree add gh-pages gh-pages
-   cd gh-pages
-   ```
+the groups can be obtained via the command
 
-   Everybody else should instead do the following, with the URL
-   in the initial clone command suitably adjusted:
+    SmallGroup( size, nr )
 
-   ```sh
-   # Create a fresh clone of your repository, and change into it
-   git clone https://github.com/USERNAME/REPOSITORY gh-pages
-   cd gh-pages
+You can also obtain the number of groups of a given order with the command
 
-   # Add a new remote pointing to the GitHubPagesForGAP repository
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   git fetch gh-gap
+    NumberSmallGroups(size)
 
-   # Create a fresh gh-pages branch from the new remote
-   git checkout -b gh-pages gh-gap/gh-pages --no-track
-   ```
+Thus the package does not install any new functionality in GAP, it only
+extends the available SmallGroups library.
 
-5. Add in copies of your `PackageInfo.g`, `README` (or `README.md`) and manual:
+To access the groups of order p^7 for p > 11 you will also need to install
+the LiePRing package and the LieRing package due to Willem de Graaf and
+Serena Cicalo. These packages are automatically loaded when SglPPow is 
+loaded.
 
-   ```
-   cp -f ../PackageInfo.g ../README* .
-   cp -f ../doc/*.{css,html,js,txt} doc/
-   ```
+*WARNING:* There are 1,396,077 groups of order 3^8, 1,600,573 groups of
+order 13^7, and 5,546,909 groups of order 17^7. For general p the number 
+of groups of order p^7 is of order 3p^5. Furthermore as p increases, the 
+time taken to generate a complete list of the groups of order p^7 grows
+rapidly. Experimentally the time taken seems to be proportional to p^{6.2}. 
+For p=13 it takes several hours to generate the complete list. For p <= 11 
+the groups are precomputed, and their SmallGroup codes are stored in the 
+SmallGroup database. But for p > 11 the Lie rings have to be generated from 
+a list of 4773 parametrized presentations in the LiePRing database, and then 
+converted into groups using the Baker-Campbell-Hausdorff formula. Further,
+it takes over 11 gb of memory to store a complete list of power-commutator
+presentations for all groups of order 13^7. Hence most users will want to 
+avoid generating complete lists of the groups!
 
-6. Now run the `update.g` GAP script. This extracts data from your
-   `PackageInfo.g` file and puts that data into `_data/package.yml`.
-   From this, the website template can populate the web pages with
-   some sensible default values.
+## License
 
-   ```
-   gap update.g
-   ```
-
-7. Commit and push everything.
-
-   ```
-   git add PackageInfo.g README* doc/ _data/package.yml
-   git commit -m "Setup gh-pages based on GitHubPagesForGAP"
-   git push --set-upstream origin gh-pages
-   ```
-
-That's it. You can now see your new package website under
-https://USERNAME.github.io/REPOSITORY/ (of course after
-adjusting USERNAME and REPOSITORY suitably).
-
-
-## Adjusting the content and layout
-
-GitHubPagesForGAP tries to automatically provide good defaults for
-most packages. However, you can tweak everything about it:
-
-* To adjust the page layout, edit the files `stylesheets/styles.css`
-and `_layouts/default.html`.
-
-* To adjust the content of the front page, edit `index.md` (resp.
-  for the content of the sidebar, edit `_layouts/default.html`
-
-* You can also add additional pages, in various formats (HTML,
-Markdown, Textile, ...).
-
-For details, please consult the [Jekyll](http://jekyllrb.com/)
-manual.
-
-
-## Testing the site locally
-
-If you would like to test your site on your own machine, without
-uploading it to GitHub (where it is visible to the public), you can do
-so by installing [Jekyll](http://jekyllrb.com/), the static web site
-generator used by GitHub to power GitHub Pages.
-
-Once you have installed Jekyll as described on its homepage, you can
-test the website locally as follows:
-
-1. Go to the `gh-pages` directory we created above.
-
-2. Run jekyll (this launches a tiny web server on your machine):
-
-   ```
-   jekyll serve -w
-   ```
-
-3. Visit the URL http://localhost:4000 in a web browser.
-
-
-## Updating after you made a release
-
-Whenever you make a release of your package (and perhaps more often than
-that), you will want to update your website. The easiest way is to use
-the `release` script from the [ReleaseTools][]. However, you can also do
-it manually. The steps for doing it are quite similar to the above:
-
-1. Go to the `gh-pages` directory we created above.
-
-2. Add in copies of your `PackageInfo.g`, `README` (or `README.md`) and manual:
-
-   ```
-   cp -f ../PackageInfo.g ../README* .
-   cp -f ../doc/*.{css,html,js,txt} doc/
-   ```
-
-3. Now run the `update.g` GAP script.
-
-4. Commit and push the work we have just done.
-
-   ```
-   git add PackageInfo.g README* doc/ _data/package.yml
-   git commit -m "Update web pages"
-   git push
-   ```
-
-A few seconds after you have done this, your changes will be online
-under https://USERNAME.github.io/REPOSITORY/ .
-
-
-## Updating to a newer version of GitHubPagesForGAP
-
-Normally you should not have to ever do this. However, if you really want to,
-you can attempt to update to the most recent version of GitHubPagesForGAP via
-the following instructions. The difficulty of such an update depends on how
-much you tweaked the site after initially cloning GitHubPagesForGAP.
-
-1. Go to the `gh-pages` directory we created above.
-   Make sure that there are no uncommitted changes, as they will be lost
-   when following these instructions.
-
-2. Make sure the `gh-gap` remote exists and has the correct URL. If in doubt,
-   just re-add it:
-   ```
-   git remote remove gh-gap
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   ```
-
-3. Attempt to merge the latest GitHubPagesForGAP.
-   ```
-   git pull gh-gap gh-pages
-   ```
-
-4. If this produced no errors and just worked, skip to the next step.
-   But it is quite likely that you will have conflicts in the file
-   `_data/package.yml`, or in your `README` or `PackageInfo.g` files.
-   These can usually be resolved by entering this:
-   ```
-   cp ../PackageInfo.g ../README* .
-   gap update.g
-   git add PackageInfo.g README* _data/package.yml
-   ```
-   If you are lucky, these were the only conflicts (check with `git status`).
-   If no merge conflicts remain, finish with this command:
-   ```
-   git commit -m "Merge gh-gap/gh-pages"
-   ```
-   If you still have merge conflicts, and don't know how to resolve them, or
-   get stuck some other way, you can abort the merge process and revert to the
-   original state by issuing this command:
-   ```
-   git merge --abort
-   ```
-
-5. You should be done now. Don't forget to push your changes if you want them
-   to become public.
-
-
-## Packages using GitHubPagesForGAP
-Packages using GitHubPagesForGAP include the following:
-
-* <https://gap-packages.github.io/anupq>
-* <https://gap-packages.github.io/cvec>
-* <https://gap-packages.github.io/genss>
-* <https://gap-packages.github.io/io>
-* <https://gap-packages.github.io/NormalizInterface>
-* <https://gap-packages.github.io/nq>
-* <https://gap-packages.github.io/orb>
-* <https://gap-packages.github.io/polenta>
-* <https://gap-packages.github.io/recog>
-* <https://gap-packages.github.io/recogbase>
-* <https://gap-packages.github.io/SingularInterface>
-
-
-## Contact
-
-Please submit bug reports, suggestions for improvements and patches via
-the [issue tracker](https://github.com/gap-system/GitHubPagesForGAP/issues).
-
-You can also contact me directly via [email](max@quendi.de).
-
-Copyright (c) 2013-2018 Max Horn
-
-[ReleaseTools]: https://github.com/gap-system/ReleaseTools
+The SglPPow package is copyright (C) 2014 by Michael Vaughan-Lee and Bettina Eick,
+and licensed under the terms of the Artistic License 2.0.
+For the exact terms of this license, please refer to the `LICENSE`
+file provided to you as part of the SglPPow package, or refer to
+<https://opensource.org/licenses/artistic-license-2.0>.

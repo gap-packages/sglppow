@@ -5,8 +5,9 @@ SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "2.1",
-Date := "08/03/2018",
+Version := "2.2",
+Date := "05/04/2022",
+License := "Artistic-2.0",
 
 Persons := [
   rec(
@@ -15,7 +16,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "michael.vaughan-lee@chch.ox.ac.uk",
-    WWWHome       := "http://users.ox.ac.uk/~vlee",
+    WWWHome       := "https://users.ox.ac.uk/~vlee",
     Place         := "Oxford",
     Institution   := "Oxford University"),
   rec(
@@ -24,7 +25,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "beick@tu-bs.de",
-    WWWHome       := "http://www.icm.tu-bs.de/~beick",
+    WWWHome       := "http://www.iaa.tu-bs.de/beick",
     Place         := "Braunschweig",
     Institution   := "TU Braunschweig"),
 ],
@@ -34,7 +35,7 @@ CommunicatedBy   := "Leonard Soicher (QMUL)",
 AcceptDate       := "08/2016",
 
 PackageWWWHome  := "https://gap-packages.github.io/sglppow/",
-README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
+README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 SourceRepository := rec(
     Type := "git",

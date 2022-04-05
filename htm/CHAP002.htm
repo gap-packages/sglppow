@@ -3,10 +3,10 @@
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <h1>2 Accessing the data</h1><p>
 <p>
-When this package is loaded, then the groups of order <var>3<sup>8</sup></var> and <var>p<sup>7</sup></var> for 
-primes <var>p &gt; 11</var> are additionally available via the SmallGroups library. As 
-a result, all groups of order <var>p<sup>n</sup></var> with <var>p=2</var> and <var>n leq9</var> and <var>p=3</var> and 
-<var>n leq8</var> and <var>p</var> an arbitrary prime and <var>n leq7</var> are then available via 
+When this package is loaded, then the groups of order 3<sup>8</sup> and <i>p</i><sup>7</sup> for 
+primes <i>p</i>  &gt;  11 are additionally available via the SmallGroups library. As 
+a result, all groups of order <i>p</i><sup><i>n</i></sup> with <i>p</i>=2 and <i>n</i>  &#8804; 9 and <i>p</i>=3 and 
+<i>n</i>  &#8804; 8 and <i>p</i> an arbitrary prime and <i>n</i>  &#8804; 7 are then available via 
 the small groups library. The corresponding information can be obtained via 
 <p>
 <a name = ""></a>
@@ -23,18 +23,18 @@ that there is no IdGroup function available for this extension of the small
 groups library.
 <p>
 WARNING: The user should be aware that there are there are 1,396,077 groups
-of order <var>3<sup>8</sup></var>, 1,600,573 groups of order <var>13<sup>7</sup></var>, and 5,546,909 groups
-of order <var>17<sup>7</sup></var>. For general <var>p</var> the number of groups of order <var>p<sup>7</sup></var> is 
-a PORC polynomial in <var>p</var> with leading term <var>3p<sup>5</sup></var>. Furthermore, as the prime
-<var>p</var> increases, the time taken to generate a complete list of the groups of 
-order <var>p<sup>7</sup></var> grows rapidly. Experimentally the time seems to be proportional
-to <var>p<sup>6.2</sup></var>. For <var>p=13</var> it takes several hours to generate the complete 
-list. For primes <var>pleq11</var> the groups are precomputed, and their SmallGroup 
-codes are stored in the SmallGroups database. For primes <var>p&gt;11</var> the Lie rings 
+of order 3<sup>8</sup>, 1,600,573 groups of order 13<sup>7</sup>, and 5,546,909 groups
+of order 17<sup>7</sup>. For general <i>p</i> the number of groups of order <i>p</i><sup>7</sup> is 
+a PORC polynomial in <i>p</i> with leading term 3<i>p</i><sup>5</sup>. Furthermore, as the prime
+<i>p</i> increases, the time taken to generate a complete list of the groups of 
+order <i>p</i><sup>7</sup> grows rapidly. Experimentally the time seems to be proportional
+to <i>p</i><sup>6&#183;2</sup>. For <i>p</i>=13 it takes several hours to generate the complete 
+list. For primes <i>p</i> &#8804; 11 the groups are precomputed, and their SmallGroup 
+codes are stored in the SmallGroups database. For primes <i>p</i> &gt; 11 the Lie rings 
 have to be generated from 4773 parametrized presentations in the LiePRing 
 database, and then converted into groups using the Baker-Campbell-Hausdorff 
 formula. A complete list of power commutator presentations for the groups 
-of order <var>13<sup>7</sup></var> takes over 11 gb of memory.
+of order 13<sup>7</sup> takes over 11 gb of memory.
 <p>
 <pre>
 gap&gt; NumberSmallGroups(3^8);
@@ -53,5 +53,5 @@ gap&gt; NumberSmallGroups(101^7);
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>sglppow manual<br>March 2018
+<address>sglppow manual<br>April 2022
 </address></body></html>
