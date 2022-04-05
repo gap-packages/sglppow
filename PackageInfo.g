@@ -16,7 +16,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "michael.vaughan-lee@chch.ox.ac.uk",
-    WWWHome       := "http://users.ox.ac.uk/~vlee",
+    WWWHome       := "https://users.ox.ac.uk/~vlee",
     Place         := "Oxford",
     Institution   := "Oxford University"),
   rec(
