@@ -60,3 +60,10 @@ converted into groups using the Baker-Campbell-Hausdorff formula. Further,
 it takes over 11 gb of memory to store a complete list of power-commutator
 presentations for all groups of order 13^7. Hence most users will want to 
 avoid generating complete lists of the groups!
+
+## License
+
+The SglPPow package is licensed under the Artistic License 2.0.
+For the exact terms of this license, please refer to the `LICENSE`
+file provided to you as part of the SglPPow package, or refer to
+<https://opensource.org/licenses/artistic-license-2.0>.

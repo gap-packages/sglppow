@@ -7,6 +7,7 @@ PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
 Version := "2.2",
 Date := "11/10/2019",
+License := "Artistic-2.0",
 
 Persons := [
   rec(
