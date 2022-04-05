@@ -63,7 +63,8 @@ avoid generating complete lists of the groups!
 
 ## License
 
-The SglPPow package is licensed under the Artistic License 2.0.
+The SglPPow package is copyright (C) 2014 by Michael Vaughan-Lee and Bettina Eick,
+and licensed under the terms of the Artistic License 2.0.
 For the exact terms of this license, please refer to the `LICENSE`
 file provided to you as part of the SglPPow package, or refer to
 <https://opensource.org/licenses/artistic-license-2.0>.
