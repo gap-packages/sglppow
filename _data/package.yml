@@ -1,7 +1,7 @@
 name: SglPPow
-version: "2.3"
+version: "2.4"
 license: "Artistic-2.0"
-date: 2022-11-04
+date: 2024-03-20
 description: |
     Database of groups of prime-power order for some prime-powers
 
@@ -33,7 +33,7 @@ packageinfo: https://gap-packages.github.io/sglppow/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/sglppow/releases/download/v2.3/sglppow-2.3.tar.gz
+      url: https://github.com/gap-packages/sglppow/releases/download/v2.4/sglppow-2.4.tar.gz
 
 abstract: |
 
@@ -44,27 +44,28 @@ keywords: |
     , , .
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>VE22</span>]   <b class='BibAuthor'>Vaughan-Lee, M. and Eick, B.</b>,
+    [<span class='BibKey'>VE24</span>]   <b class='BibAuthor'>Vaughan-Lee, M. and Eick, B.</b>,
      <i class='BibTitle'>SglPPow, Database of groups of prime-power order for some prime-powers,
-             Version 2.3</i>
-     (<span class='BibYear'>2022</span>)<br />
-    (<span class='BibNote'>Refereed GAP package</span>),
+             Version 2.4</i>
+     (<span class='BibYear'>2024</span>)<br />
+    (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/sglppow/">https://gap-packages.github.io/sglppow/</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ SglPPow2.3,
-      author =           {Vaughan-Lee, M. and Eick, B.},
-      title =            {{SglPPow}, Database of groups of prime-power order for
-                          some prime-powers, {V}ersion 2.3},
-      month =            {Nov},
-      year =             {2022},
-      note =             {Refereed GAP package},
+    @misc{ SglPPow,
+      author =           {Vaughan\texttt{\symbol{45}}Lee, M. and Eick, B.},
+      title =            {{SglPPow},       Database       of      groups      of
+                          prime\texttt{\symbol{45}}power    order    for    some
+                          prime\texttt{\symbol{45}}powers, {V}ersion 2.4},
+      month =            {Mar},
+      year =             {2024},
+      note =             {GAP package},
       howpublished =     {\href        {https://gap-packages.github.io/sglppow/}
-                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {\texttt{https://gap\texttt{\symbol{45}}packages.github.io/}\discretionary
                           {}{}{}\texttt{sglppow/}}},
       keywords =         {; ;},
-      printedkey =       {VE22}
+      printedkey =       {VE24}
     }
 

@@ -5,8 +5,8 @@ SetPackageInfo( rec(
 
 PackageName := "SglPPow",
 Subtitle := "Database of groups of prime-power order for some prime-powers",
-Version := "2.3",
-Date := "04/11/2022",
+Version := "2.4",
+Date := "20/03/2024",
 License := "Artistic-2.0",
 
 Persons := [
@@ -51,7 +51,7 @@ AbstractHTML := "",
 
 PackageDoc := rec(
   BookName  := "SglPPow",
-  ArchiveURLSubset := ["doc"],
+  ArchiveURLSubset := ["doc","htm"],
   HTMLStart := "htm/chapters.htm",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
