@@ -61,8 +61,8 @@ PackageDoc := rec(
 AvailabilityTest := ReturnTrue,
 
 Dependencies := rec(
-  GAP := ">=4.7",
-  NeededOtherPackages := [],
+  GAP := ">=4.10",
+  NeededOtherPackages := [["smallgrp", ">=1.3"]],
   SuggestedOtherPackages := [["LiePRing", ">=1.8"],["LieRing", ">=2.2"]],
   ExternalConditions := []
 ),
