@@ -43,7 +43,7 @@ jobs:
       # insists on loading 'singular'; this is resolved in current liepring
       - if: ${{ matrix.gap-version == '4.12' }}
         run: sudo apt-get install singular
-      - uses: gap-actions/build-pkg@v2
+      - uses: gap-actions/build-pkg@v3
       - uses: gap-actions/run-pkg-tests@v4
       - uses: gap-actions/run-pkg-tests@v4
         with:
