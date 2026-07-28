@@ -1,5 +1,13 @@
 This file describes changes in the sglppow package.
 
+# 2.5 (2026-07-28)
+
+  - Require GAP >= 4.10 and declare `smallgrp` as an explicit dependency
+    (it used to be relied upon implicitly, as it is part of the default
+    GAP distribution)
+  - Fix typos in README and manual
+  - Minor janitorial changes
+
 # 2.4 (2024-03-20)
 
   - Include the HTML version of the manual in the release archive again
