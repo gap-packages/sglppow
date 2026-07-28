@@ -7,7 +7,7 @@ Groups Library gives access to the following groups:
   - Those of cubefree order at most 50,000 (395,703 groups);
   - Those of order p^7 for the primes p = 3,5,7,11 (907,489 groups);
   - Those of order p^n for n <= 6 and all primes p;
-  - Those of order q^n * p where q^n divides 28, 36, 55 or 74 and p is
+  - Those of order q^n * p where q^n divides 2^8, 3^6, 5^5 or 7^4 and p is
       an arbitrary prime not equal to q;
   - Those of squarefree order;
   - Those whose order factorises into at most 3 primes.
