@@ -1,0 +1,39 @@
+<!-- W  intro.tex             GAP documentation                  Bettina Eick / Michael Vaughan-Lee -->
+<Chapter Label="Introduction">
+<Heading>Introduction</Heading>
+SglPPow is a package which extends the Small Groups Library. Currently the 
+Small Groups Library gives access to the following groups:
+<List>
+<Mark><A>(1)</A></Mark>
+<Item>Those of order at most 2000 except 1024 (423,164,062 groups);</Item>
+<Mark><A>(2)</A></Mark>
+<Item>Those of cubefree order at most 50,000 (395,703 groups);</Item>
+<Mark><A>(3)</A></Mark>
+<Item>Those of order <M>p^{7}</M> for the primes <M>p=3,5,7,11</M> (907,489 groups);</Item>
+<Mark><A>(4)</A></Mark>
+<Item>Those of order <M>p^{n}</M> for <M>n\leq 6</M> and all primes <M>p</M>;</Item>
+<Mark><A>(5)</A></Mark>
+<Item>Those of order <M>pq^{n}</M> where <M>q^{n}</M> divides <M>2^8</M>, <M>3^6</M>, <M>5^5</M> or <M>7^4</M> and
+     <M>p</M> is an arbitrary prime not equal to <M>q</M>;</Item>
+<Mark><A>(6)</A></Mark>
+<Item>Those of squarefree order;</Item>
+<Mark><A>(7)</A></Mark>
+<Item>Those whose order factorizes into at most 3 primes.</Item>
+</List>
+This package gives access to the groups of order <M>p^{7}</M> for primes 
+<M>p&gt;11</M>, and to the groups of order <M>3^{8}</M>.
+<P/>
+To access the groups of order <M>p^{7}</M> for primes <M>p&gt;11</M> you need the 
+packages LiePRing (by Michael Vaughan-Lee and Bettina Eick) and LieRing
+(by Willem de Graaf and Serena Cicalo).
+<P/>
+The groups of order <M>3^{8}</M> have been determined by Michael Vaughan-Lee.
+The groups of order <M>p^{7}</M> for primes <M>p&gt;11</M> are available via the 
+database of the nilpotent Lie rings of order <M>p^{k}</M> for <M>k\leq 7</M> and
+primes <M>p&gt;3</M> in the LiePRing package. These groups are obtained from the 
+Lie rings using the implementation of the Baker-Campbell-Hausdorff formula 
+in the LieRing package.
+<P/>
+Acknowledgements: The authors thank Max Horn for help with general 
+framework of GAP programs to extend the Small Groups Library.
+</Chapter>
