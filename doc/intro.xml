@@ -1,7 +1,7 @@
-<!-- W  intro.tex             GAP documentation                  Bettina Eick / Michael Vaughan-Lee -->
+<!-- intro.xml    GAP documentation    Bettina Eick / Michael Vaughan-Lee -->
 <Chapter Label="Introduction">
 <Heading>Introduction</Heading>
-SglPPow is a package which extends the Small Groups Library. Currently the
+&SglPPow; is a package which extends the Small Groups Library. Currently the
 Small Groups Library gives access to the following groups:
 <Enum>
 <Item>Those of order at most 2000 except 1024 (423,164,062 groups);</Item>
@@ -18,7 +18,7 @@ This package gives access to the groups of order <M>p^{7}</M> for primes
 <P/>
 To access the groups of order <M>p^{7}</M> for primes <M>p&gt;11</M> you need the
 packages LiePRing (by Michael Vaughan-Lee and Bettina Eick) and LieRing
-(by Willem de Graaf and Serena Cicalo).
+(by Willem de Graaf and Serena Cicalò).
 <P/>
 The groups of order <M>3^{8}</M> have been determined by Michael Vaughan-Lee.
 The groups of order <M>p^{7}</M> for primes <M>p&gt;11</M> are available via the
@@ -27,6 +27,6 @@ primes <M>p&gt;3</M> in the LiePRing package. These groups are obtained from the
 Lie rings using the implementation of the Baker-Campbell-Hausdorff formula
 in the LieRing package.
 <P/>
-Acknowledgements: The authors thank Max Horn for help with general
-framework of GAP programs to extend the Small Groups Library.
+Acknowledgements: The authors thank Max Horn for help with the general
+framework of GAP programs used to extend the Small Groups Library.
 </Chapter>

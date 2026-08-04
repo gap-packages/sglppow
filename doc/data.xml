@@ -1,8 +1,8 @@
 <Chapter Label="The organization of the data">
 <Heading>The organization of the data</Heading>
 We include some brief comments on the organization of the data. As a
-preliminary step we briefly recall the <M>p</M>-group generation algorithm.
-<Section Label="The $p$-group generation algorithm">
+preliminary step, we recall the <M>p</M>-group generation algorithm.
+<Section Label="The p-group generation algorithm">
 <Heading>The <M>p</M>-group generation algorithm</Heading>
 The <M>p</M>-group generation algorithm was developed and implemented by Eamonn
 O'Brien, and we refer the reader to <Cite Key="OBrien90"/> for a detailed
@@ -16,14 +16,14 @@ apart from the elementary abelian ones, is an immediate descendant of
 the quotient <M>P/R</M> where <M>R</M> is the last non-trivial term of the lower
 <M>p</M>-central series of <M>P</M>.
 <P/>
-Thus all the groups with order <M>3^{8}</M>, except the elementary abelian one,
-are immediate descendants of groups with order <M>3^{k}</M> for some <M>k</M> smaller
-than <M>8</M>. All of
-the immediate descendants of a <M>p</M>-group <M>Q</M> are quotients of a certain
-extension of <M>Q</M>; the isomorphism problem for these descendants is equivalent
-to the problem of determining orbits of certain subgroups of this extension
-under an action of the automorphism group of <M>Q</M>. Not all <M>p</M>-groups have
-immediate descendants, those that do are called capable, and those which
+Thus all the groups of order <M>3^{8}</M>, except the elementary abelian one,
+are immediate descendants of groups of order <M>3^{k}</M> for some <M>k</M> smaller
+than <M>8</M>. All of the immediate descendants of a <M>p</M>-group <M>Q</M> are
+quotients of a certain extension of <M>Q</M>; the isomorphism problem for these
+descendants is equivalent to the problem of determining orbits of certain
+subgroups of this extension under an action of the automorphism group of
+<M>Q</M>. Not all <M>p</M>-groups have
+immediate descendants; those that do are called capable, and those which
 do not are called terminal.
 <P/>
 O'Brien and Vaughan-Lee's classification of the groups of order <M>p^{7}</M>
@@ -45,8 +45,8 @@ groups of order <M>3^{8}</M>.
 <Section Label="The groups of order 6561">
 <Heading>The groups of order 6561</Heading>
 The database of groups of order <M>3^{8}</M> is organized according to rank and
-<M>p</M>-class. Here rank is the rank of the Frattini quotient, i.e. the size of
-a minimal generating set, and <M>p</M>-class is as defined in the previous
+<M>p</M>-class. Here the rank is the rank of the Frattini quotient, i.e., the size
+of a minimal generating set, and the <M>p</M>-class is as defined in the previous
 section. The following table gives the number of groups of order <M>3^{8}</M> of
 each rank and <M>p</M>-class, with the <M>(i,j)</M> entry corresponding to rank <M>i</M>
 and <M>p</M>-class <M>j</M>.
@@ -62,8 +62,8 @@ and <M>p</M>-class <M>j</M>.
 7 | 0   10       0        0       0      0     0   0
 8 | 1   0        0        0       0      0     0   0
 ]]></Listing>
-In the list of all groups of order <M>3^8</M> the first group is the cyclic
-group, then the 2-generator groups follow in order of increasing <M>p</M>-class
+In the list of all groups of order <M>3^8</M>, the first group is the cyclic
+group, then the 2-generator groups follow in order of increasing <M>p</M>-class,
 and so on. The above table can thus be used to find the range of numbers
 of groups with a given rank and <M>p</M>-class.
 <P/>
@@ -75,20 +75,20 @@ order <M>3^{8}</M> are numbered from 2219--2227. The groups numbered 2219 and
 groups of rank 3, <M>p</M>-class 6, and order <M>3^{8}</M> are numbered from
 261663--261686. The first four of these groups are descendants of
 SmallGroup(<M>3^{7},5841</M>), the next 17 are descendants of
-SmallGroup(<M>3^{7},5844</M>), and the last 4 are descendants of
+SmallGroup(<M>3^{7},5844</M>), and the last four are descendants of
 SmallGroup(<M>3^{7},5849</M>).
 </Section>
 <Section Label="The groups with order the seventh power of a prime">
 <Heading>The groups with order the seventh power of a prime</Heading>
-The groups of order <M>p^{7}</M> for prime <M>p&gt;11</M> are obtained from the LiePRing
+The groups of order <M>p^{7}</M> for primes <M>p&gt;11</M> are obtained from the LiePRing
 database of nilpotent Lie rings of order <M>p^{7}</M> using Willem de Graaf's
 implementation of the Baker-Campbell-Hausdorff formula. The LiePRing
 database is organized according to the output from the nilpotent Lie ring
-generation algorithm. For any given <M>p</M> the first Lie ring in the database
-is the cyclic Lie ring of order <M>p^{7}</M>. Next come the two generator Lie
-rings, then the three generator Lie rings, and so on, ending with the six
-generator Lie rings, and then finally the elementary abelian Lie ring of
-rank 7. The first four of the two generator nilpotent Lie rings of order
+generation algorithm. For any given <M>p</M>, the first Lie ring in the database
+is the cyclic Lie ring of order <M>p^{7}</M>. Next come the two-generator Lie
+rings, then the three-generator Lie rings, and so on, ending with the
+six-generator Lie rings, and then finally the elementary abelian Lie ring of
+rank 7. The first four of the two-generator nilpotent Lie rings of order
 <M>p^{7}</M> are immediate descendants of the Lie ring
 <Display>
 \langle a,b|pb,class 3\rangle
@@ -108,84 +108,80 @@ Lie rings. These are the immediate descendants of the elementary abelian
 Lie ring of rank 6.
 <P/>
 There is a complete list of presentations for the nilpotent Lie rings of
-order <M>p^{k}</M> for <M>k\leq 7</M> valid for all <M>p&gt;3</M> in the document p567.pdf
-supplied with the documentation for the LiePRing package. The presentations
-are grouped as described above, with each group of presentations giving the
-immediate descendants of a Lie ring of smaller order.
+order <M>p^{k}</M> for <M>k\leq 7</M>, valid for all <M>p&gt;3</M>, in the document
+<F>p567.pdf</F> supplied with the documentation for the LiePRing package.
+The presentations are grouped as described above, with each group of
+presentations giving the immediate descendants of a Lie ring of smaller
+order.
 <P/>
 In a few cases the descendants of a parametrized family of Lie rings are
-grouped together. For example there is a family of <M>p(p-1)</M> distinct Lie
+grouped together. For example, there is a family of <M>p(p-1)</M> distinct Lie
 rings with presentations of the form
 <Display>
 \langle a,b,c|ca-baa,cb,pa-\lambda baa-\mu bab,pb+\nu baa+\xi
 bab,pc,class 3\rangle
 </Display>
-with <M>\lambda ,\mu ,\nu ,\xi \neq 0</M>. Most of these algebras are terminal,
+with <M>\lambda ,\mu ,\nu ,\xi \neq 0</M>. Most of these Lie rings are terminal,
 but <M>\frac{5}{2}p-\frac{9}{2}+\frac{1}{2}\gcd(p-1,4)</M> of them are capable,
 and they have a total of
 <M>\frac{1}{2}p^{3}+2p^{2}-5p+\frac{1}{2}+\frac{p}{2}\gcd(p-1,4)</M>
 descendants of order <M>p^{7}</M> and <M>p</M>-class 4. These
 descendants have presentations
-<P/>
 <Display>
 \langle a,b,c|ca-baa,cb,pa-baa-\mu bab-ybaaa,pb+\nu
 baa+bab-zbaaa,pc-tbaaa,class 4\rangle ,
 </Display>
-<P/>
 <Display>
 \langle a,b,c|ca-baa,cb,pa-baa-\mu bab-ybaaa,pb+\nu baa+\mu \nu
 bab-zbaaa,pc-tbaaa,class 4\rangle
 </Display>
-<P/>
 for various choices of the parameters <M>\mu ,\nu ,y,z,t</M>. For any given value
-of <M>p</M> the <M>\frac{1}{2}p^{3}+2p^{2}-5p+\frac{1}{2}+\frac{p}{2}\gcd(p-1,4)</M>
-distinct Lie algebras with presentations of this form are grouped together,
+of <M>p</M>, the <M>\frac{1}{2}p^{3}+2p^{2}-5p+\frac{1}{2}+\frac{p}{2}\gcd(p-1,4)</M>
+distinct Lie rings with presentations of this form are grouped together,
 with consecutive numbering.
 <P/>
-There is no easy way to determine the numbering of (say) the three generator
-Lie rings of <M>p</M>-class 4 since the numbers depend on <M>p</M> in a very
-complicated way, and generally there is no easy efficient way of searching
+There is no easy way to determine the numbering of (say) the three-generator
+Lie rings of <M>p</M>-class 4, since the numbers depend on <M>p</M> in a very
+complicated way, and generally there is no easy, efficient way of searching
 the database for a group with particular properties. In view of the numbers
 of groups of order <M>p^{7}</M> and the time needed to generate a complete list,
 this means that the database will be of limited use for most people. A user
 who wants to access a particular batch of descendants as described in
-p567.pdf is advised to use the LiePRing package directly, as this package
+<F>p567.pdf</F> is advised to use the LiePRing package directly, as this package
 also has an option to obtain the corresponding groups via Willem de Graaf's
 implementation of the Baker-Campbell-Hausdorff formula. On the other hand,
 there are only
-<P/>
 <Display>
 2p^{3}+13p^{2}+64p+145+(p^{2}+10p+56)\gcd(p-1,3)+(4p+28)\gcd(p-1,4)
 </Display>
 <Display>
  +\;(2p+12)\gcd(p-1,5)+\gcd(p-1,7)+4\gcd(p-1,8)+\gcd(p-1,9)
 </Display>
-two generator groups of order <M>p^{7}</M> for <M>p&gt;5</M> and a complete list of them
+two-generator groups of order <M>p^{7}</M> for <M>p&gt;5</M>, and a complete list of them
 can be generated quite quickly for moderate values of <M>p</M>. The table below
-gives the number of <M>d</M> generator groups of order <M>p^{7}</M> valid for all
+gives the number of <M>d</M>-generator groups of order <M>p^{7}</M>, valid for all
 <M>p&gt;5</M>, and the user can use the table to compute the range of numbers needed
-to access the <M>d</M> generator groups of order <M>p^{7}</M> for any given <M>p</M>.
+to access the <M>d</M>-generator groups of order <M>p^{7}</M> for any given <M>p</M>.
 <List>
-<Mark>&lt;rank 1&gt;</Mark>
+<Mark>rank 1</Mark>
 <Item><M>1</M></Item>
-<Mark>&lt;rank 2&gt;</Mark>
+<Mark>rank 2</Mark>
 <Item><M>2p^{3}+13p^{2}+64p+145+(p^{2}+10p+56)\gcd(p-1,3) +(4p+28)\gcd(p-1,4)</M>
       <M>+\;(2p+12)\gcd(p-1,5)+\gcd(p-1,7)+4\gcd(p-1,8)+\gcd(p-1,9)</M></Item>
-<Mark>&lt;rank 3&gt;</Mark>
+<Mark>rank 3</Mark>
 <Item><M>2p^{5}+9p^{4}+29p^{3}+99p^{2}+380p+1100+(3p^{2}+28p+189)\gcd(p-1,3)</M>
       <M>+\;(p^{2}+13p+84)\gcd(p-1,4)+(p+17)\gcd(p-1,5)+\gcd(p-1,8)+3\gcd(p-1,7)</M></Item>
-<Mark>&lt;rank 4&gt;</Mark>
+<Mark>rank 4</Mark>
 <Item><M>p^{5}+3p^{4}+13p^{3}+57p^{2}+248p+1044+(6p+46)\gcd(p-1,3)</M>
       <M>+\;(2p+23)\gcd(p-1,4)+2\gcd(p-1,5)</M></Item>
-<Mark>&lt;rank 5&gt;</Mark>
+<Mark>rank 5</Mark>
 <Item><M>p^{2}+15p+155</M></Item>
-<Mark>&lt;rank 6&gt;</Mark>
+<Mark>rank 6</Mark>
 <Item><M>9</M></Item>
-<Mark>&lt;rank 7&gt;</Mark>
+<Mark>rank 7</Mark>
 <Item><M>1</M></Item>
 </List>
 The total number of groups of order <M>p^{7}</M> for all <M>p &gt; 5</M> is given by
-<P/>
 <Display>
 3p^{5}+12p^{4}+44p^{3}+170p^{2}+707p+2455
 </Display>

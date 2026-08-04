@@ -1,35 +1,35 @@
 <Chapter Label="Accessing the data">
 <Heading>Accessing the data</Heading>
-When this package is loaded, then the groups of order <M>3^8</M> and <M>p^7</M> for
-primes <M>p &gt; 11</M> are additionally available via the SmallGroups library. As
-a result, all groups of order <M>p^n</M> with <M>p=2</M> and <M>n \leq 9</M> and <M>p=3</M> and
-<M>n \leq 8</M> and <M>p</M> an arbitrary prime and <M>n \leq 7</M> are then available via
-the small groups library. The corresponding information can be obtained via
+When this package is loaded, the groups of order <M>3^8</M> and <M>p^7</M> for
+primes <M>p &gt; 11</M> become additionally available via the Small Groups Library.
+As a result, all groups of order <M>p^n</M> with <M>p=2</M> and <M>n \leq 9</M>, with
+<M>p=3</M> and <M>n \leq 8</M>, and with <M>p</M> an arbitrary prime and <M>n \leq 7</M> are
+then available via the Small Groups Library. The corresponding information
+can be obtained via the following functions.
 <Section>
-<Heading>Accessing the data</Heading>
+<Heading>Functions for accessing the data</Heading>
 <ManSection>
 <Func Name="SmallGroup" Arg="size, number"/>
 <Func Name="NumberSmallGroups" Arg="size"/>
 <Func Name="SmallGroupsInformation" Arg="size"/>
 <Description>
 See <Ref Chap="The Small Groups Library" BookName="smallgrp"/> for
-background on these functions. Note
-that there is no IdGroup function available for this extension of the small
-groups library.
+background on these functions. Note that there is no <C>IdGroup</C> function
+available for this extension of the Small Groups Library.
 <P/>
-WARNING: The user should be aware that there are there are 1,396,077 groups
+WARNING: The user should be aware that there are 1,396,077 groups
 of order <M>3^8</M>, 1,600,573 groups of order <M>13^{7}</M>, and 5,546,909 groups
-of order <M>17^7</M>. For general <M>p</M> the number of groups of order <M>p^7</M> is
+of order <M>17^7</M>. For general <M>p</M>, the number of groups of order <M>p^7</M> is
 a PORC polynomial in <M>p</M> with leading term <M>3p^5</M>. Furthermore, as the prime
 <M>p</M> increases, the time taken to generate a complete list of the groups of
-order <M>p^7</M> grows rapidly. Experimentally the time seems to be proportional
+order <M>p^7</M> grows rapidly. Experimentally, the time seems to be proportional
 to <M>p^{6.2}</M>. For <M>p=13</M> it takes several hours to generate the complete
 list. For primes <M>p\leq 11</M> the groups are precomputed, and their SmallGroup
-codes are stored in the SmallGroups database. For primes <M>p&gt;11</M> the Lie rings
+codes are stored in the Small Groups Library. For primes <M>p&gt;11</M> the Lie rings
 have to be generated from 4773 parametrized presentations in the LiePRing
 database, and then converted into groups using the Baker-Campbell-Hausdorff
-formula. A complete list of power commutator presentations for the groups
-of order <M>13^7</M> takes over 11 gb of memory.
+formula. A complete list of power-commutator presentations for the groups
+of order <M>13^7</M> takes over 11 GB of memory.
 <Example><![CDATA[
 gap> NumberSmallGroups(3^8);
 1396077
