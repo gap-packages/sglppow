@@ -15,11 +15,11 @@ Groups Library gives access to the following groups:
 This package gives access to the groups of order p^7 for primes p > 11,
 and to the groups of order 3^8.
 
-The Database of groups of order 3^8 has been determined by Michael 
-Vaughan-Lee. Access to the groups of order p^7 for primes p > 11 is via 
-Bettina Eick and Michael Vaughan-Lee's LiePRing package which is based 
-on Eamonn O'Brien and Michael Vaughan-Lee's classification of the nilpotent 
-Lie rings of order p^7. 
+The Database of groups of order 3^8 has been determined by Michael
+Vaughan-Lee. Access to the groups of order p^7 for primes p > 11 is via
+Bettina Eick and Michael Vaughan-Lee's LiePRing package which is based
+on Eamonn O'Brien and Michael Vaughan-Lee's classification of the nilpotent
+Lie rings of order p^7.
 
 The package can be downloaded as a .tar.gz file from
    <https://gap-packages.github.io/sglppow/>
@@ -44,21 +44,21 @@ extends the available SmallGroups library.
 
 To access the groups of order p^7 for p > 11 you will also need to install
 the LiePRing package and the LieRing package due to Willem de Graaf and
-Serena Cicalo. These packages are automatically loaded when SglPPow is 
+Serena Cicalo. These packages are automatically loaded when SglPPow is
 loaded.
 
 *WARNING:* There are 1,396,077 groups of order 3^8, 1,600,573 groups of
-order 13^7, and 5,546,909 groups of order 17^7. For general p the number 
-of groups of order p^7 is of order 3p^5. Furthermore as p increases, the 
+order 13^7, and 5,546,909 groups of order 17^7. For general p the number
+of groups of order p^7 is of order 3p^5. Furthermore as p increases, the
 time taken to generate a complete list of the groups of order p^7 grows
-rapidly. Experimentally the time taken seems to be proportional to p^{6.2}. 
-For p=13 it takes several hours to generate the complete list. For p <= 11 
-the groups are precomputed, and their SmallGroup codes are stored in the 
-SmallGroup database. But for p > 11 the Lie rings have to be generated from 
-a list of 4773 parametrized presentations in the LiePRing database, and then 
+rapidly. Experimentally the time taken seems to be proportional to p^{6.2}.
+For p=13 it takes several hours to generate the complete list. For p <= 11
+the groups are precomputed, and their SmallGroup codes are stored in the
+SmallGroup database. But for p > 11 the Lie rings have to be generated from
+a list of 4773 parametrized presentations in the LiePRing database, and then
 converted into groups using the Baker-Campbell-Hausdorff formula. Further,
 it takes over 11 gb of memory to store a complete list of power-commutator
-presentations for all groups of order 13^7. Hence most users will want to 
+presentations for all groups of order 13^7. Hence most users will want to
 avoid generating complete lists of the groups!
 
 ## License
