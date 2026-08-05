@@ -10,15 +10,11 @@
 #
 gap> START_TEST("sglppow01.tst");
 
-# doc/access.xml:33-42
+# doc/access.xml:33-38
 gap> NumberSmallGroups(3^8);
 1396077
 gap> SmallGroup(3^8, 1000000);
 <pc group of size 6561 with 8 generators>
-gap> NumberSmallGroups(17^7);
-5546909
-gap> NumberSmallGroups(101^7);
-32826263845
 
 #
 gap> STOP_TEST("sglppow01.tst", 1);

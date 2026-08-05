@@ -35,15 +35,16 @@ gap> NumberSmallGroups(3^8);
 1396077
 gap> SmallGroup(3^8, 1000000);
 <pc group of size 6561 with 8 generators>
+]]></Example>
+The groups of order <M>p^7</M> for <M>p&gt;11</M> are only available if the
+<Package>LiePRing</Package> and <Package>LieRing</Package> packages are
+loaded. They are constructed in batches, so the first request for such a
+group reports what it is doing and may take a while:
+<Log><![CDATA[
 gap> NumberSmallGroups(17^7);
 5546909
 gap> NumberSmallGroups(101^7);
 32826263845
-]]></Example>
-Groups of order <M>p^7</M> for <M>p&gt;11</M> are constructed in batches, so the
-first request for such a group reports what it is doing and may take a
-while:
-<Log><![CDATA[
 gap> SmallGroup(17^7, 5000);
 constructing a batch of 1156 groups ... this may take a while
 <pc group of size 410338673 with 7 generators>
