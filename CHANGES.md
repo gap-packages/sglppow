@@ -1,5 +1,13 @@
 This file describes changes in the sglppow package.
 
+# Unreleased
+
+  - Register both layers with the small groups library through
+    `SmallGroupsAddLayer` where `SmallGrp` offers it, instead of filling its
+    arrays by hand. The old route is kept for older `SmallGrp`, where
+    `layer_3hoch8`, `layer_phoch7`, `pos_3hoch8` and `pos_phoch7` still hold
+    slot numbers; with the new one they stay `false`.
+
 # 2.5 (2026-07-28)
 
   - Require GAP >= 4.10 and declare `smallgrp` as an explicit dependency
