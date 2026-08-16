@@ -1,0 +1,13 @@
+<Chapter Label="Installing and loading the package">
+<Heading>Installing and loading the package</Heading>
+The package can be downloaded as a <F>.tar.gz</F> archive from
+<URL>https://gap-packages.github.io/sglppow/</URL>
+<P/>
+Then <C>tar -zxvf sglppow-&VERSION;.tar.gz</C> produces a directory
+<F>sglppow-&VERSION;</F>.
+This should be moved into the <F>pkg</F> directory of a GAP installation.
+<P/>
+The package is set up so that after loading it into GAP with
+<C>LoadPackage("sglppow");</C> the full functionality of the package is
+available.
+</Chapter>
