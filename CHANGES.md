@@ -3,10 +3,9 @@ This file describes changes in the sglppow package.
 # Unreleased
 
   - Register both layers with the small groups library through
-    `SmallGroupsAddLayer` where `SmallGrp` offers it, instead of filling its
-    arrays by hand. The old route is kept for older `SmallGrp`, where
-    `layer_3hoch8`, `layer_phoch7`, `pos_3hoch8` and `pos_phoch7` still hold
-    slot numbers; with the new one they stay `false`.
+    `SmallGroupsAddLayer` where `SmallGrp` offers it; older `SmallGrp` is
+    still supported, and only there do `layer_3hoch8`, `layer_phoch7`,
+    `pos_3hoch8` and `pos_phoch7` hold slot numbers.
 
 # 2.5 (2026-07-28)
 

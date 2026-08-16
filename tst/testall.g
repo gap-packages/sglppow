@@ -1,6 +1,7 @@
 LoadPackage("sglppow");
 exclude := [];
-if layer_phoch7 = false then
+if not IsBound(SGLPPOW_AVAILABLE_PHOCH7) then
+    # lib/phoch7/sgl-p7.g was not read, whichever way we register
     Add(exclude, "order_p_7.tst");
 fi;
 
