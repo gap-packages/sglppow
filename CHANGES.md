@@ -1,6 +1,6 @@
 This file describes changes in the sglppow package.
 
-# Unreleased
+# 2.6 (2026-08-18)
 
   - If available, use the `SmallGroupsAddLayer` function provided by `SmallGrp`
 
