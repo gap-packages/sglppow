@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (SglPPow) - Chapter 2: Accessing the data</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
+<p><a id="X7A1AE16F7A95C7D6" name="X7A1AE16F7A95C7D6"></a></p>
+<div class="ChapSects"><a href="chap2.html#X7A1AE16F7A95C7D6">2 <span class="Heading">Accessing the data</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X82AEF9F984FEBC8F">2.1 <span class="Heading">Functions for accessing the data</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X821C18FD843D8248">2.1-1 SmallGroup</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Accessing the data</span></h3>
+
+<p>When this package is loaded, the groups of order <span class="SimpleMath">3^8</span> and <span class="SimpleMath">p^7</span> for primes <span class="SimpleMath">p &gt; 11</span> become additionally available via the Small Groups Library. As a result, all groups of order <span class="SimpleMath">p^n</span> with <span class="SimpleMath">p=2</span> and <span class="SimpleMath">n ≤ 9</span>, with <span class="SimpleMath">p=3</span> and <span class="SimpleMath">n ≤ 8</span>, and with <span class="SimpleMath">p</span> an arbitrary prime and <span class="SimpleMath">n ≤ 7</span> are then available via the Small Groups Library. The corresponding information can be obtained via the following functions.</p>
+
+<p><a id="X82AEF9F984FEBC8F" name="X82AEF9F984FEBC8F"></a></p>
+
+<h4>2.1 <span class="Heading">Functions for accessing the data</span></h4>
+
+<p><a id="X821C18FD843D8248" name="X821C18FD843D8248"></a></p>
+
+<h5>2.1-1 SmallGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallGroup</code>( <var class="Arg">size</var>, <var class="Arg">number</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberSmallGroups</code>( <var class="Arg">size</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallGroupsInformation</code>( <var class="Arg">size</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>See <a href="https://docs.gap-system.org/pkg/smallgrp/doc/chap1.html#X7C16EA1580AC7586"><span class="RefLink">smallgrp: The Small Groups Library</span></a> for background on these functions. Note that there is no <code class="code">IdGroup</code> function available for this extension of the Small Groups Library.</p>
+
+<p>WARNING: The user should be aware that there are 1,396,077 groups of order <span class="SimpleMath">3^8</span>, 1,600,573 groups of order <span class="SimpleMath">13^7</span>, and 5,546,909 groups of order <span class="SimpleMath">17^7</span>. For general <span class="SimpleMath">p</span>, the number of groups of order <span class="SimpleMath">p^7</span> is a PORC polynomial in <span class="SimpleMath">p</span> with leading term <span class="SimpleMath">3p^5</span>. Furthermore, as the prime <span class="SimpleMath">p</span> increases, the time taken to generate a complete list of the groups of order <span class="SimpleMath">p^7</span> grows rapidly. Experimentally, the time seems to be proportional to <span class="SimpleMath">p^6.2</span>. For <span class="SimpleMath">p=13</span> it takes several hours to generate the complete list. For primes <span class="SimpleMath">p≤ 11</span> the groups are precomputed, and their SmallGroup codes are stored in the Small Groups Library. For primes <span class="SimpleMath">p&gt;11</span> the Lie rings have to be generated from 4773 parametrized presentations in the LiePRing database, and then converted into groups using the Baker-Campbell-Hausdorff formula. A complete list of power-commutator presentations for the groups of order <span class="SimpleMath">13^7</span> takes over 11 GB of memory.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberSmallGroups(3^8);</span>
+1396077
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallGroup(3^8, 1000000);</span>
+&lt;pc group of size 6561 with 8 generators&gt;
+</pre></div>
+
+<p>The groups of order <span class="SimpleMath">p^7</span> for <span class="SimpleMath">p&gt;11</span> are only available if the <strong class="pkg">LiePRing</strong> and <strong class="pkg">LieRing</strong> packages are loaded. They are constructed in batches, so the first request for such a group reports what it is doing and may take a while:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberSmallGroups(17^7);</span>
+5546909
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberSmallGroups(101^7);</span>
+32826263845
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallGroup(17^7, 5000);</span>
+constructing a batch of 1156 groups ... this may take a while
+&lt;pc group of size 410338673 with 7 generators&gt;
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
