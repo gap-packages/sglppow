@@ -1,5 +1,9 @@
 This file describes changes in the sglppow package.
 
+# Unreleased
+
+  - If available, use the `SmallGroupsAddLayer` function provided by `SmallGrp`
+
 # 2.5 (2026-07-28)
 
   - Require GAP >= 4.10 and declare `smallgrp` as an explicit dependency
