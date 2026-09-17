@@ -22,6 +22,7 @@ BindGlobal( "SGLPPOW_INFO", function( size, inforec, num )
     Print( "This database was created by Michael Vaughan-Lee (2014).\n");
 end );
 
+ReadPackage( "sglppow", "lib/3hoch8/decode.g" );
 ReadPackage( "sglppow", "lib/3hoch8/sgl-6561.g" ); 
 
 if IsPackageMarkedForLoading( "LieRing", "2.2" ) and

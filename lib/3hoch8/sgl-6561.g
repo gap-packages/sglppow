@@ -24,11 +24,7 @@ BindGlobal("SGLPPOW_GROUP_3HOCH8", function( size, i, inforec )
         j := j+1;
     od;
 
-    if not IsBound( SMALL_GROUP_LIB[ 6561 ] ) then
-        SMALL_GROUP_LIB[ 6561 ] := [];
-    fi;
-
-    if not IsBound( SMALL_GROUP_LIB[ 6561 ][j] ) then
+    if not IsBound( SGLPPOW_3HOCH8_DATA[j] ) then
         if j = 1 then
             ReadPackage( "sglppow", "lib/3hoch8/rank1class8" ); # 1
         elif j = 2 then
@@ -76,7 +72,7 @@ BindGlobal("SGLPPOW_GROUP_3HOCH8", function( size, i, inforec )
         fi;
     fi;
 
-    return PcGroupCode( SMALL_GROUP_LIB[6561][j][k], size );
+    return PcGroupCode( SGLPPOW_3HOCH8_CODE( j, k ), size );
 end);
 
 #
