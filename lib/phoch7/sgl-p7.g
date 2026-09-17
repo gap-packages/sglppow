@@ -1,3 +1,8 @@
+# the codes of the families we have constructed so far, and the number of
+# groups in each family; both indexed by the prime and then the family
+BindGlobal( "SGLPPOW_PHOCH7_CODES", [] );
+BindGlobal( "SGLPPOW_PHOCH7_COUNTS", [] );
+
 # the orders we cover, and how many groups we have of each
 BindGlobal("SGLPPOW_AVAILABLE_PHOCH7", function( size )
     local f, p, n;
@@ -30,46 +35,46 @@ BindGlobal("SGLPPOW_GROUP_PHOCH7", function( size, i, inforec )
         Error("there are just ",inforec.number," groups of order ",size );
     fi;
 
-    if not IsBound( SMALL_GROUP_LIB_P7[p] ) then
-        SMALL_GROUP_LIB_P7[p] := [];
-        SMALL_GROUP_NUM_P7[p] := [];
+    if not IsBound( SGLPPOW_PHOCH7_CODES[p] ) then
+        SGLPPOW_PHOCH7_CODES[p] := [];
+        SGLPPOW_PHOCH7_COUNTS[p] := [];
     fi;
 
-    if not IsBound(SMALL_GROUP_NUM_P7[p][1]) then
+    if not IsBound(SGLPPOW_PHOCH7_COUNTS[p][1]) then
         L := LiePRingByData(7, LIE_DATA[7][1] );
         l := NumberOfLiePRingsInFamily(L);
-        SMALL_GROUP_NUM_P7[p][1] := EvaluatePorcPoly(l, p);
+        SGLPPOW_PHOCH7_COUNTS[p][1] := EvaluatePorcPoly(l, p);
     fi;
 
     j := 1;
     k := i;
-    while k > SMALL_GROUP_NUM_P7[p][j] do
-        k := k-SMALL_GROUP_NUM_P7[p][j];
+    while k > SGLPPOW_PHOCH7_COUNTS[p][j] do
+        k := k-SGLPPOW_PHOCH7_COUNTS[p][j];
         j := j+1;
-        if not IsBound(SMALL_GROUP_NUM_P7[p][j]) then
+        if not IsBound(SGLPPOW_PHOCH7_COUNTS[p][j]) then
             L := LiePRingByData(7, LIE_DATA[7][j] );
             l := NumberOfLiePRingsInFamily(L);
-            SMALL_GROUP_NUM_P7[p][j] := EvaluatePorcPoly(l, p);
+            SGLPPOW_PHOCH7_COUNTS[p][j] := EvaluatePorcPoly(l, p);
         fi;
-        if not IsInt(SMALL_GROUP_NUM_P7[p][j]) then
+        if not IsInt(SGLPPOW_PHOCH7_COUNTS[p][j]) then
             L := LiePRingByData(7, LIE_DATA[7][j]);
-            SMALL_GROUP_LIB_P7[p][j] := LiePRingsInFamily(L, p, "code");
-            SMALL_GROUP_NUM_P7[p][j] := Length(SMALL_GROUP_LIB_P7[p][j]);
+            SGLPPOW_PHOCH7_CODES[p][j] := LiePRingsInFamily(L, p, "code");
+            SGLPPOW_PHOCH7_COUNTS[p][j] := Length(SGLPPOW_PHOCH7_CODES[p][j]);
         fi;
     od;
 
-    if IsBound( SMALL_GROUP_LIB_P7[p][j] ) then
-        return PcGroupCode( SMALL_GROUP_LIB_P7[p][j][k], size );
+    if IsBound( SGLPPOW_PHOCH7_CODES[p][j] ) then
+        return PcGroupCode( SGLPPOW_PHOCH7_CODES[p][j][k], size );
     fi;
 
-    if SMALL_GROUP_NUM_P7[p][j] > p then
-        Print("constructing a batch of ",SMALL_GROUP_NUM_P7[p][j]," groups ");
+    if SGLPPOW_PHOCH7_COUNTS[p][j] > p then
+        Print("constructing a batch of ",SGLPPOW_PHOCH7_COUNTS[p][j]," groups ");
         Print("... this may take a while \n");
     fi;
 
     L := LiePRingByData(7, LIE_DATA[7][j]);
-    SMALL_GROUP_LIB_P7[p][j] := LiePRingsInFamily(L, p, "code");
-    return PcGroupCode( SMALL_GROUP_LIB_P7[p][j][k], size );
+    SGLPPOW_PHOCH7_CODES[p][j] := LiePRingsInFamily(L, p, "code");
+    return PcGroupCode( SGLPPOW_PHOCH7_CODES[p][j][k], size );
 end);
 
 #

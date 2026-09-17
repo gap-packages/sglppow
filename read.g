@@ -9,8 +9,6 @@
 ##
 
 # needed global var's
-SMALL_GROUP_LIB_P7 := [];
-SMALL_GROUP_NUM_P7 := [];
 layer_3hoch8 := false;
 layer_phoch7 := false;
 pos_3hoch8 := false;
