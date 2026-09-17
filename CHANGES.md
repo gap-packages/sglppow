@@ -1,10 +1,11 @@
-This file describes changes in the sglppow package.
+This file describes changes in the `SglPPow` package.
 
-# Unreleased
+# 2.7 (2026-09-17)
 
   - Store the groups of order 3^8 more efficiently; 4.5 MB of data files
     instead of 77 MB, respectively 0.5 MB instead of 14.6 MB after gzip
     compression
+  - Fix loading `SmallGrp` and `SglPPow` simultaneously
 
 # 2.6 (2026-08-18)
 
