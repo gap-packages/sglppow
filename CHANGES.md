@@ -1,5 +1,11 @@
 This file describes changes in the sglppow package.
 
+# Unreleased
+
+  - Store the groups of order 3^8 more efficiently; 4.5 MB of data files
+    instead of 77 MB, respectively 0.5 MB instead of 14.6 MB after gzip
+    compression
+
 # 2.6 (2026-08-18)
 
   - If available, use the `SmallGroupsAddLayer` function provided by `SmallGrp`

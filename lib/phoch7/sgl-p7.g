@@ -1,3 +1,8 @@
+# the codes of the families we have constructed so far, and the number of
+# groups in each family; both indexed by the prime and then the family
+BindGlobal( "SGLPPOW_PHOCH7_CODES", [] );
+BindGlobal( "SGLPPOW_PHOCH7_COUNTS", [] );
+
 # the orders we cover, and how many groups we have of each
 BindGlobal("SGLPPOW_AVAILABLE_PHOCH7", function( size )
     local f, p, n;
@@ -30,46 +35,46 @@ BindGlobal("SGLPPOW_GROUP_PHOCH7", function( size, i, inforec )
         Error("there are just ",inforec.number," groups of order ",size );
     fi;
 
-    if not IsBound( SMALL_GROUP_LIB_P7[p] ) then
-        SMALL_GROUP_LIB_P7[p] := [];
-        SMALL_GROUP_NUM_P7[p] := [];
+    if not IsBound( SGLPPOW_PHOCH7_CODES[p] ) then
+        SGLPPOW_PHOCH7_CODES[p] := [];
+        SGLPPOW_PHOCH7_COUNTS[p] := [];
     fi;
 
-    if not IsBound(SMALL_GROUP_NUM_P7[p][1]) then
+    if not IsBound(SGLPPOW_PHOCH7_COUNTS[p][1]) then
         L := LiePRingByData(7, LIE_DATA[7][1] );
         l := NumberOfLiePRingsInFamily(L);
-        SMALL_GROUP_NUM_P7[p][1] := EvaluatePorcPoly(l, p);
+        SGLPPOW_PHOCH7_COUNTS[p][1] := EvaluatePorcPoly(l, p);
     fi;
 
     j := 1;
     k := i;
-    while k > SMALL_GROUP_NUM_P7[p][j] do
-        k := k-SMALL_GROUP_NUM_P7[p][j];
+    while k > SGLPPOW_PHOCH7_COUNTS[p][j] do
+        k := k-SGLPPOW_PHOCH7_COUNTS[p][j];
         j := j+1;
-        if not IsBound(SMALL_GROUP_NUM_P7[p][j]) then
+        if not IsBound(SGLPPOW_PHOCH7_COUNTS[p][j]) then
             L := LiePRingByData(7, LIE_DATA[7][j] );
             l := NumberOfLiePRingsInFamily(L);
-            SMALL_GROUP_NUM_P7[p][j] := EvaluatePorcPoly(l, p);
+            SGLPPOW_PHOCH7_COUNTS[p][j] := EvaluatePorcPoly(l, p);
         fi;
-        if not IsInt(SMALL_GROUP_NUM_P7[p][j]) then
+        if not IsInt(SGLPPOW_PHOCH7_COUNTS[p][j]) then
             L := LiePRingByData(7, LIE_DATA[7][j]);
-            SMALL_GROUP_LIB_P7[p][j] := LiePRingsInFamily(L, p, "code");
-            SMALL_GROUP_NUM_P7[p][j] := Length(SMALL_GROUP_LIB_P7[p][j]);
+            SGLPPOW_PHOCH7_CODES[p][j] := LiePRingsInFamily(L, p, "code");
+            SGLPPOW_PHOCH7_COUNTS[p][j] := Length(SGLPPOW_PHOCH7_CODES[p][j]);
         fi;
     od;
 
-    if IsBound( SMALL_GROUP_LIB_P7[p][j] ) then
-        return PcGroupCode( SMALL_GROUP_LIB_P7[p][j][k], size );
+    if IsBound( SGLPPOW_PHOCH7_CODES[p][j] ) then
+        return PcGroupCode( SGLPPOW_PHOCH7_CODES[p][j][k], size );
     fi;
 
-    if SMALL_GROUP_NUM_P7[p][j] > p then
-        Print("constructing a batch of ",SMALL_GROUP_NUM_P7[p][j]," groups ");
+    if SGLPPOW_PHOCH7_COUNTS[p][j] > p then
+        Print("constructing a batch of ",SGLPPOW_PHOCH7_COUNTS[p][j]," groups ");
         Print("... this may take a while \n");
     fi;
 
     L := LiePRingByData(7, LIE_DATA[7][j]);
-    SMALL_GROUP_LIB_P7[p][j] := LiePRingsInFamily(L, p, "code");
-    return PcGroupCode( SMALL_GROUP_LIB_P7[p][j][k], size );
+    SGLPPOW_PHOCH7_CODES[p][j] := LiePRingsInFamily(L, p, "code");
+    return PcGroupCode( SGLPPOW_PHOCH7_CODES[p][j][k], size );
 end);
 
 #
@@ -92,10 +97,10 @@ else
 # Get the next available "layer" id (the built-in library
 # consists of 11 layers, but other packages may already have
 # added further layers).
-layer_phoch7 := layer_3hoch8+1;
+BindGlobal( "SGLPPOW_PHOCH7_LIB_ID", SGLPPOW_3HOCH8_LIB_ID + 1 );
 
 # Determine where to add our new lookup functions
-pos_phoch7 := pos_3hoch8+1;
+BindGlobal( "SGLPPOW_PHOCH7_FUNC_ID", SGLPPOW_3HOCH8_FUNC_ID + 1 );
 
 # need to adjust this, as otherwise an error is produced
 SMALL_AVAILABLE_FUNCS[11] := function( size )
@@ -108,36 +113,36 @@ SMALL_AVAILABLE_FUNCS[11] := function( size )
 end;
 
 # meta data on small groups data we provide
-SMALL_AVAILABLE_FUNCS[layer_phoch7] := function( size )
+SMALL_AVAILABLE_FUNCS[SGLPPOW_PHOCH7_LIB_ID] := function( size )
     local r;
     r := SGLPPOW_AVAILABLE_PHOCH7( size );
     if r = fail then
         return fail;
     fi;
-    r.lib := layer_phoch7;
-    r.func := pos_phoch7;
+    r.lib := SGLPPOW_PHOCH7_LIB_ID;
+    r.func := SGLPPOW_PHOCH7_FUNC_ID;
     return r;
 end;
 
 # meta data on IdGroup functionality we provide
-ID_AVAILABLE_FUNCS[layer_phoch7] := function( size )
+ID_AVAILABLE_FUNCS[SGLPPOW_PHOCH7_LIB_ID] := function( size )
     # Three possible implementations:
 
     # 1. No IdGroup functionality at all:
     return fail;
 
     # 2. IdGroup provided for all groups:
-    #return SMALL_AVAILABLE_FUNCS[layer_phoch7];
+    #return SMALL_AVAILABLE_FUNCS[SGLPPOW_PHOCH7_LIB_ID];
 
     # 3. IdGroup provided for a subset of order
     #if size in [ 12345, 67890 ] then
-    #  return SMALL_AVAILABLE_FUNCS[layer_phoch7];
+    #  return SMALL_AVAILABLE_FUNCS[SGLPPOW_PHOCH7_LIB_ID];
     #fi;
 
 end;
 
 # Method for SmallGroup(size, i):
-SMALL_GROUP_FUNCS[ pos_phoch7 ] := SGLPPOW_GROUP_PHOCH7;
+SMALL_GROUP_FUNCS[ SGLPPOW_PHOCH7_FUNC_ID ] := SGLPPOW_GROUP_PHOCH7;
 
 # Method which selects a subset of all those groups with
 # a certain combination of properties.
@@ -145,14 +150,14 @@ SMALL_GROUP_FUNCS[ pos_phoch7 ] := SGLPPOW_GROUP_PHOCH7;
 # to install something custom which e.g. takes care of filtering
 # the abelian groups, and which also knows that all groups
 # of order p^n are nilpotent.
-SELECT_SMALL_GROUPS_FUNCS[ pos_phoch7 ] := SELECT_SMALL_GROUPS_FUNCS[ 11 ];
+SELECT_SMALL_GROUPS_FUNCS[ SGLPPOW_PHOCH7_FUNC_ID ] := SELECT_SMALL_GROUPS_FUNCS[ 11 ];
 
 # Optional: Method for IdGroup(size, i).
-#ID_GROUP_FUNCS[ pos_phoch7 ] := function( G, inforec )
+#ID_GROUP_FUNCS[ SGLPPOW_PHOCH7_FUNC_ID ] := function( G, inforec )
 #    Error("TODO");
 #end;
 
 # Method for SmallGroupsInformation(size):
-SMALL_GROUPS_INFORMATION[ pos_phoch7 ] := SGLPPOW_INFO;
+SMALL_GROUPS_INFORMATION[ SGLPPOW_PHOCH7_FUNC_ID ] := SGLPPOW_INFO;
 
 fi;

@@ -6,7 +6,7 @@ GAP and Magma. If c is the code for one of the groups, then to obtain
 the corresponding group in Magma enter SmallGroupDecoding(c,3^8) and
 in GAP enter PcGroupCode(c,3^8).
 
-The codes are given in a set of files, each file of the same form.
+The codes were given in a set of files, each file of the same form.
 For example the file "rank7class2" contains the codes for the ten
 seven generator groups of class two and order 3^8. The codes are
 given as a sequence "codes":
@@ -22,6 +22,11 @@ codes:=[
 1479299540301381760,
 9705684280422972784832,
 9705684280422972784769];
+
+(The files in lib/3hoch8 no longer hold the codes themselves. They store
+the differences between the pc presentations of consecutive groups, which
+etc/encode-3hoch8.py writes and lib/3hoch8/decode.g reads back; the codes
+are the same.)
 
 There are 22 files in all, each of the form "rankmclassn",
 where m is the rank of G/(G^3.[G,G]) and n is the p-class of G.
