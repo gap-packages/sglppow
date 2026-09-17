@@ -8,12 +8,6 @@
 #R  Read the install files.
 ##
 
-# needed global var's
-layer_3hoch8 := false;
-layer_phoch7 := false;
-pos_3hoch8 := false;
-pos_phoch7 := false;
-
 # Method for SmallGroupsInformation(size), used by both our layers
 BindGlobal( "SGLPPOW_INFO", function( size, inforec, num )
     Print( " \n");

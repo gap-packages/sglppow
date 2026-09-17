@@ -95,48 +95,48 @@ else
 # Get the next available "layer" id (the built-in library
 # consists of 11 layers, but other packages may already have
 # added further layers).
-layer_3hoch8 := Length(SMALL_AVAILABLE_FUNCS) + 1;
+BindGlobal( "SGLPPOW_3HOCH8_LIB_ID", Length(SMALL_AVAILABLE_FUNCS) + 1 );
 
 # Determine where to add our new lookup functions
-pos_3hoch8 := Maximum(List([
+BindGlobal( "SGLPPOW_3HOCH8_FUNC_ID", Maximum(List([
         SMALL_GROUP_FUNCS,
         SMALL_GROUPS_INFORMATION,
         NUMBER_SMALL_GROUPS_FUNCS,
         ID_GROUP_FUNCS,
         SELECT_SMALL_GROUPS_FUNCS,
-    ], Length)) + 1;
+    ], Length)) + 1 );
 
 # meta data on small groups data we provide
-SMALL_AVAILABLE_FUNCS[layer_3hoch8] := function( size )
+SMALL_AVAILABLE_FUNCS[SGLPPOW_3HOCH8_LIB_ID] := function( size )
     local r;
     r := SGLPPOW_AVAILABLE_3HOCH8( size );
     if r = fail then
         return fail;
     fi;
-    r.lib := layer_3hoch8;
-    r.func := pos_3hoch8;
+    r.lib := SGLPPOW_3HOCH8_LIB_ID;
+    r.func := SGLPPOW_3HOCH8_FUNC_ID;
     return r;
 end;
 
 # meta data on IdGroup functionality we provide
-ID_AVAILABLE_FUNCS[layer_3hoch8] := function( size )
+ID_AVAILABLE_FUNCS[SGLPPOW_3HOCH8_LIB_ID] := function( size )
     # Three possible implementations:
 
     # 1. No IdGroup functionality at all:
     return fail;
 
     # 2. IdGroup provided for all groups:
-    #return SMALL_AVAILABLE_FUNCS[layer_3hoch8];
+    #return SMALL_AVAILABLE_FUNCS[SGLPPOW_3HOCH8_LIB_ID];
 
     # 3. IdGroup provided for a subset of order
     #if size in [ 12345, 67890 ] then
-    #  return SMALL_AVAILABLE_FUNCS[layer_3hoch8];
+    #  return SMALL_AVAILABLE_FUNCS[SGLPPOW_3HOCH8_LIB_ID];
     #fi;
 
 end;
 
 # Method for SmallGroup(size, i):
-SMALL_GROUP_FUNCS[ pos_3hoch8 ] := SGLPPOW_GROUP_3HOCH8;
+SMALL_GROUP_FUNCS[ SGLPPOW_3HOCH8_FUNC_ID ] := SGLPPOW_GROUP_3HOCH8;
 
 # Method which selects a subset of all those groups with
 # a certain combination of properties.
@@ -144,14 +144,14 @@ SMALL_GROUP_FUNCS[ pos_3hoch8 ] := SGLPPOW_GROUP_3HOCH8;
 # to install something custom which e.g. takes care of filtering
 # the abelian groups, and which also knows that all groups
 # of order p^n are nilpotent.
-SELECT_SMALL_GROUPS_FUNCS[ pos_3hoch8 ] := SELECT_SMALL_GROUPS_FUNCS[ 11 ];
+SELECT_SMALL_GROUPS_FUNCS[ SGLPPOW_3HOCH8_FUNC_ID ] := SELECT_SMALL_GROUPS_FUNCS[ 11 ];
 
 # Optional: Method for IdGroup(size, i).
-#ID_GROUP_FUNCS[ pos_3hoch8 ] := function( G, inforec )
+#ID_GROUP_FUNCS[ SGLPPOW_3HOCH8_FUNC_ID ] := function( G, inforec )
 #    Error("TODO");
 #end;
 
 # Method for SmallGroupsInformation(size):
-SMALL_GROUPS_INFORMATION[ pos_3hoch8 ] := SGLPPOW_INFO;
+SMALL_GROUPS_INFORMATION[ SGLPPOW_3HOCH8_FUNC_ID ] := SGLPPOW_INFO;
 
 fi;
