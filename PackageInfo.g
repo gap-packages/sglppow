@@ -61,11 +61,17 @@ PackageDoc := rec(
 AvailabilityTest := ReturnTrue,
 
 Dependencies := rec(
-  GAP := ">=4.10",
+  GAP := ">=4.13",
   NeededOtherPackages := [["smallgrp", ">=1.3"]],
   SuggestedOtherPackages := [["LiePRing", ">=1.8"],["LieRing", ">=2.2"]],
   ExternalConditions := []
 ),
+
+# the groups of order p^7 are constructed from Lie rings
+Extensions := [
+  rec( needed := [ [ "LieRing", ">=2.2" ], [ "LiePRing", ">=1.8" ] ],
+       filename := "lib/phoch7/sgl-p7.g" ),
+],
 
 BannerString := Concatenation(
     "----------------------------------------------------------------\n",

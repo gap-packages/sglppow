@@ -94,13 +94,19 @@ else
 
 # SmallGrp before 1.7: claim the slots and fill the arrays by hand
 
-# Get the next available "layer" id (the built-in library
-# consists of 11 layers, but other packages may already have
-# added further layers).
-BindGlobal( "SGLPPOW_PHOCH7_LIB_ID", SGLPPOW_3HOCH8_LIB_ID + 1 );
+# Get the next available "layer" id. This file is a package extension and
+# may be read long after lib/3hoch8/sgl-6561.g, so other packages may have
+# added layers in between.
+BindGlobal( "SGLPPOW_PHOCH7_LIB_ID", Length(SMALL_AVAILABLE_FUNCS) + 1 );
 
 # Determine where to add our new lookup functions
-BindGlobal( "SGLPPOW_PHOCH7_FUNC_ID", SGLPPOW_3HOCH8_FUNC_ID + 1 );
+BindGlobal( "SGLPPOW_PHOCH7_FUNC_ID", Maximum(List([
+        SMALL_GROUP_FUNCS,
+        SMALL_GROUPS_INFORMATION,
+        NUMBER_SMALL_GROUPS_FUNCS,
+        ID_GROUP_FUNCS,
+        SELECT_SMALL_GROUPS_FUNCS,
+    ], Length)) + 1 );
 
 # need to adjust this, as otherwise an error is produced
 SMALL_AVAILABLE_FUNCS[11] := function( size )

@@ -17,11 +17,6 @@ end );
 ReadPackage( "sglppow", "lib/3hoch8/decode.g" );
 ReadPackage( "sglppow", "lib/3hoch8/sgl-6561.g" ); 
 
-if IsPackageMarkedForLoading( "LieRing", "2.2" ) and
-   IsPackageMarkedForLoading( "LiePRing", "1.8" ) then
-  ReadPackage( "sglppow", "lib/phoch7/sgl-p7.g" ); 
-fi;
-
 
 #E  read.g . . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
 
